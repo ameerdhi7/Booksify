@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use app\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use vendor\project\StatusTest;

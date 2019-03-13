@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\cart;
+use app\cart;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use vendor\project\StatusTest;

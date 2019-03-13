@@ -40,9 +40,9 @@ Route::group(["middleware"=>"auth"],function (){
 }
 );
 /////////admin auth routes
-Route::get('/admin/login', 'Admin\LoginAdminController@showLoginForm')->name("admin.login");
-Route::post('/admin/login', 'Admin\LoginAdminController@login');
-Route::post('/admin/logout', 'Admin\LoginAdminController@logout');
+Route::get('/admin/login', 'admin\LoginAdminController@showLoginForm')->name("admin.login");
+Route::post('/admin/login', 'admin\LoginAdminController@login');
+Route::post('/admin/logout', 'admin\LoginAdminController@logout');
 ///////////
 Auth::routes();
 //////
