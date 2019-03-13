@@ -117,6 +117,7 @@ class BookController extends Controller
         $data=$this->validate($request,$rules);
         $data["poster"]=$url;
         $book->update($data);
+        $book->categories()->sync($request->categories);
         return Response::redirectTo("dashboard/books/");
 
     }

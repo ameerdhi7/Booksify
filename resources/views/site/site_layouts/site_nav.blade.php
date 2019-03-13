@@ -15,6 +15,7 @@
             <a class="btn btn-round special text-white " href="/"><i class="material-icons">home</i>Home</a>
 
             <ul class="navbar-nav ml-auto">
+
 @auth
                 <li class="nav-item active">
                     <form action="{{route('logout')}}" method="post">
@@ -23,8 +24,6 @@
 
                             logout <i class="material-icons">logout</i>
                         </button>
-
-
                     </form>
                 </li>
                 <li>

@@ -90,17 +90,16 @@
     padding-bottom: 5px; }
 
 .vector3{
-    background-image:url("/images/unspa1.jpg") ;
+    background-image:url("/images/minified.jpg") ;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 .poster_height{
-
-
     max-height: 15vh;
     object-fit: cover;
+    max-width: 20vh;
 }
 .special {
     background-color: #1c2a48 !important; }
@@ -128,3 +127,9 @@ transform: scale(1,1.1);    overflow:hidden;
     min-height: 100%;
 }
 .footer{}
+.img_cart{
+
+    max-height: 15vh;
+    object-fit: cover;
+    max-width: 15vh;
+}

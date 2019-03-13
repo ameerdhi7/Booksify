@@ -33,7 +33,7 @@
 
             </div>
         </div>
-        <div class="row  justify-content-center mt-0 ">
+        <div class="row  justify-content-center align-items-center mt-0 ">
             <div v-for="book in books" class="col-lg-3 col-sm-10">
 
                 <div class="card card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
@@ -43,7 +43,6 @@
                             <img class="img  img_height " :src="`/${book.poster}`">
                         </div>
                     </div>
-
                     <div class="card-body ">
                         <div class="row justify-content-center" >
                             <div class="col-auto">
@@ -55,10 +54,19 @@
                                 </h4>
                             </div>
                         </div>
+                        <div class="row justify-content-around align-items-center mt-0" >
+                            <div class="col-lg-4  col-sm-auto" v-for="categories in book.categories">
+                                <span  class="badge-default badge pick-size">@{{ categories.type }}</span>
+                            </div>
+                        </div>
+                           <div class="row justify-content-center align-items-center">
+                               <div class="col-auto ">
+                                   <h5 class="card-category text-gray"> @{{book.author}}
+                                   </h5>
+                               </div>
+                           </div>
 
 
-                        <h5 class="card-category text-gray"> @{{book.author}}
-                        </h5>
 
                     </div>
                     <div class="card-footer justify-content-center align-items-center">

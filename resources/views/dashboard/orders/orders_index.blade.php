@@ -23,7 +23,7 @@
                                 <th >phone number</th>
                                 <th >region</th>
                                 <th >city</th>
-                                {{--<th class="text-right">Actions</th>--}}
+                                <th >Date</th>
                             </tr>
                             </thead>
 
@@ -37,8 +37,7 @@
                                     <td>{{$order->phone_number}}</td>
                                     <td>{{$order->region}}</td>
                                     <td>{{$order->city}}</td>
-
-
+                                    <td>{{$order->created_at}}</td>
 
 
                                 </tr>
