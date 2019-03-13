@@ -59,12 +59,13 @@ class BookController extends Controller
 
         ];
         if (request()->poster!="")
-        $url=request()->poster->store('uploads');
+        $url=request()->poster->store('Uploads');
         $data=$this->validate($request,$rules);
         $data["poster"]=$url;
 
         Book::create($data)->categories()->sync($request->categories);
         return Response::redirectTo("dashboard/books/");
+
 
     }
 
