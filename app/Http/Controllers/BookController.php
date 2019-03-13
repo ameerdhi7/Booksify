@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Adsdsdsdspp\Category;
+use app\Category;
 use app\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
