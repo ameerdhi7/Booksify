@@ -12,29 +12,29 @@
 */
 Route::group(["prefix"=>"/dashboard","middleware"=>"auth:admin"],function (
 ){
-    Route::resource("books","bookcontroller");
-    Route::resource("categories","categorycontroller");
-    Route::resource("users","userscontroller");
-    Route::resource("orders","ordercontroller");
-    Route::get("/user/orders/{user}","ordersitecontroller@orderbyuser");
+    Route::resource("books","BookController");
+    Route::resource("categories","CategoryController");
+    Route::resource("users","UsersController");
+    Route::resource("orders","OrderController");
+    Route::get("/user/orders/{user}","OrderSiteController@orderbyuser");
 });
 
 Route::group(["middleware"=>["auth:admin","admin.super"]],function (
 ){
-    Route::resource("admins","admincontroller");
+    Route::resource("admins","AdminController");
 
 });
 
 
-Route::get('/',"sitecontroller@home");
-Route::get('/books/',"sitecontroller@getallbooks");
-Route::get('/booksbysearch/',"sitecontroller@search");
+Route::get('/',"SiteController@home");
+Route::get('/books/',"SiteController@getallbooks");
+Route::get('/booksbysearch/',"SiteController@search");
 Route::group(["middleware"=>"auth"],function (){
 
-    Route::get('/books/orders/{book}',"ordersitecontroller@orderform");
-    Route::post('/books/orders/create/',"ordersitecontroller@storeorder");
-    Route::post('/books/carts/',"cartsitecontroller@store"); //store to cart
-    Route::delete('/books/carts/{cart}',"cartsitecontroller@delete"); //delete cart
+    Route::get('/books/orders/{book}',"OrderSiteController@orderform");
+    Route::post('/books/orders/create/',"OrderSiteController@storeorder");
+    Route::post('/books/carts/',"CartSiteController@store"); //store to cart
+    Route::delete('/books/carts/{cart}',"CartSiteController@delete"); //delete cart
 }
 );
 /////////admin auth routes
@@ -44,4 +44,3 @@ Route::post('/admin/logout', 'Admin\LoginAdminController@logout');
 ///////////
 Auth::routes();
 //////
-Route::get('/home', 'HomeController@index')->name('home');
