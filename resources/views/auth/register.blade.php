@@ -1,7 +1,6 @@
 @extends('site.site_layouts.site_master')
 @section('content')
-    <div class="rgba-black-strong">
-        <div class="container-fluid m-0 order_vector ">
+        <div class="container-fluid m-0  ">
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-6">
                     @include("layouts.errors")
@@ -100,7 +99,6 @@
                                     </div>
 
                                     <div class="col-md-6">
-
                                     </div>
                                 </div>
                                 <div class="row mt-2"><div class="col-md-6">  <input id="image" class="form-control " placeholder="select image" type="file" name="image"/></div></div>
@@ -123,8 +121,6 @@
             </div>
             <div class="_footer">
                 @include("site.site_layouts.site_footer")
-
             </div>
         </div>
-    </div>
 @endsection

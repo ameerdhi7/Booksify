@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="container-fluid h-100   vector3">
+    <div class="container-fluid h-100">
     <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
+        <div class="col-md-5 mt-5">
             <div class="card">
                 <div class="card-header card-header-info blue-gradient-rgba m-0"><h4>{{ __('Login') }}</h4></div>
 
@@ -63,12 +63,6 @@
                                         </button>
                                     </div>
                                 </div>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>

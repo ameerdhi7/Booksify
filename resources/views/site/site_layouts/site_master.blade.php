@@ -24,7 +24,7 @@
     </script>
 </head>
 @include("site.site_layouts.site_nav")
-<body class="bg-dark rgba-black-strong vector3 h-100">
+<body class="bg-dark  vector3 h-100">
 <div class="rgba-black-strong  rgba">
     @yield("content")
     <!-- =======   JS Files for  material kit ============  -->

@@ -11,7 +11,7 @@
             </div>
             <div class="col-lg-7  col-sm-5"><h3 class="text-white ml-3 wow slideInLeft" data-wow-delay="0.3"
                                                   data-wow-duration="1s">
-                    Scientific books , Philosophical, Novels...Filtering and Find your best Book By it's Title or Price
+                    Scientific books , Philosophical, Novels...Filter and Find your best Book By it's Title or Price
                     quickly !
                 </h3></div>
         </div>
@@ -80,7 +80,6 @@
                             <input name="user_id" value="{{auth()->user()->id}}" type="hidden">
 @endauth
                             <button type="submit" class="btn btn-round special"><i class="material-icons">add_shopping_cart</i>Cart</button>
-
 
 
 </form>

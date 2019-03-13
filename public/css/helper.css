@@ -90,7 +90,7 @@
     padding-bottom: 5px; }
 
 .vector3{
-    background-image:url("/images/minified.jpg") ;
+    background-image:url("/images/newback.jpg") ;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -103,6 +103,9 @@
 }
 .special {
     background-color: #1c2a48 !important; }
+.black{
+    background:#000000 !important;
+}
 .animate:hover{
     background-color: rgba(0, 0, 0, 0.7);
 transform: scale(1,1.1);    overflow:hidden;

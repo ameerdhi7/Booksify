@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(["prefix"=>"/dashboard"],function (
+Route::group(["prefix"=>"/dashboard","middleware"=>"auth:admin"],function (
 ){
     Route::resource("books","BookController");
     Route::resource("categories","CategoryController");
