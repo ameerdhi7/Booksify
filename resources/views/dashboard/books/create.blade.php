@@ -1,0 +1,101 @@
+<!-- ================ BOOKS FORM ============ -->
+@extends("layouts.master")
+@section("content")
+    <div class="row mt-5 justify-content-center">
+
+
+        <div class="col-sm-6">
+            @include("layouts.errors")
+            <div class="card">
+                <h5 class="card-header blue-gradient-rgba text-white text-center py-4">
+                    Create New Book
+                </h5>
+                <!--Card content-->
+                <div class="card-body px-lg-5">
+
+                    <!-- Form -->
+                    <form action="/dashboard/books" method="post" class="text-center" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="row align-items-center justify-content-between mt-4">
+                            <div class="col-5">
+                                <!-- Book title -->
+
+                                <input type="text" name="title" type="text" id="title" class="form-control">
+                                <label for="title">Book Title</label>
+
+                            </div>
+                            <div class="col-5">
+                                <!-- Book price -->
+                                <input name="price" type="number" id="price" class="form-control">
+                                <label for="price">Book Price</label>
+
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between align-items-center mt-4">
+                            <div class="col-5">
+                                <!-- Book  author-->
+                                <input name="author" type="text" id="author" class="form-control">
+                                <label for="author">Book author</label>
+                            </div>
+                            <div class="col-5">
+                                <!-- Book  edition number-->
+
+                                <input name="edition_number" type="number" id="edition_number" class="form-control">
+                                <label for="edition_number">Edition Number</label>
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between align-items-center mt-4">
+                            <div class="col-5">
+                                <!-- Book  edition year-->
+
+                                <input name="edition_year" type="number" id="edition_year" class="form-control">
+                                <label for="edition_year">Edition Year</label>
+
+                            </div>
+                            <div class="col-5">
+
+                                <!--Book ISBN  -->
+                                <input name="isbn" type="number" id="isbn" class="form-control">
+                                <label for="isbn">Book ISBN</label>
+
+                            </div>
+                        </div>
+
+                        <div class="row h-50 mt-4 justify-content-between align-items-center">
+                            <!-- uploading book poster-->
+
+                            <div class="col-6">
+
+                                <input  name="poster" type="file" id="poster" class="form-control">
+                                <label for="poster">Upload Book Poster</label>
+                            </div>
+                            <div class="col-5">
+                                <select class="form-control " name="categories[]"  multiple data-style="btn btn-link"
+                                        id="writer_id">
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->type}}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Submit
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+@endsection
