@@ -16,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users=user::all();
+        $users=User::all();
         $data=["users"=>$users];
         return view("dashboard.users.users_index",$data);
     }
@@ -53,7 +53,7 @@ class UsersController extends Controller
         $data=$this->validate($request,$rules);
         $data['image']=$url;
          $data['password']=Hash::make($data['password']);
-        user::create($data);
+        User::create($data);
 
         return Response::redirectTo("/dashboard/users/");
 

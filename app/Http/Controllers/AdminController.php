@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\admin;
+use App\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins=admin::all();
+        $admins=Admin::all();
         $data=["admins"=>$admins];
 
         return view("dashboard.admins_in_dashboard.index_admin",$data);
@@ -46,7 +46,7 @@ class AdminController extends Controller
             "password"=>"required"
         ];
         $data=$this->validate($request,$rules);
-        admin::create($data);
+        Admin::create($data);
 return Response::redirectTo("/admins/");
 
     }

@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function index()
     {
 
-        $orders=order::with("user:id,name")->get();
+        $orders=Order::with("user:id,name")->get();
         $data=[
             "orders"=>$orders
         ];

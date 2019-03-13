@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\book;
-use App\order;
-use App\user;
+use App\Book;
+use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -12,7 +12,7 @@ class OrderSiteController extends Controller
     public function orderForm($id){
 
 
-        $books=book::where("id","like","$id")->get();
+        $books=Book::where("id","like","$id")->get();
         $data=[
             "books"=>$books
         ];
@@ -39,7 +39,7 @@ return view("site.site_success");
 
 
     public function orderbyuser (user $user){
-       $orders=order::where("user_id","like",$user->id)->get();
+       $orders=Order::where("user_id","like",$user->id)->get();
        $data=[
            "orders"=>$orders,
            "user"=>$user

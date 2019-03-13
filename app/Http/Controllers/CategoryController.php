@@ -48,7 +48,7 @@ class CategoryController extends Controller
         ];
 
         $data=$this->validate($request,$rules);
-        category::create($data);
+        Category::create($data);
         return Response::redirectTo("/dashboard/categories/");
     }
 

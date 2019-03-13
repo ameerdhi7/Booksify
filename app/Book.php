@@ -43,7 +43,7 @@ class Book extends Model
     }
     public function orders(){
 
-        return  $this->belongsToMany(order::class);
+        return  $this->belongsToMany(Order::class);
 
     }
     public  function carts(){

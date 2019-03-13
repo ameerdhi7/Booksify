@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Category;
-use app\Book;
+use App\Category;
+use App\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -17,7 +17,7 @@ class BookController extends Controller
     public function index()
     {
 
-        $books=book::with("categories")->paginate(10);
+        $books=Book::with("categories")->paginate(10);
         $data=["books"=>$books];
         return view("dashboard.books.index",$data);
 
@@ -30,7 +30,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $categories = category::all();
+        $categories = Category::all();
         $data = [
             "categories" => $categories
         ];

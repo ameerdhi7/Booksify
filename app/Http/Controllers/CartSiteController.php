@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\cart;
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use vendor\project\StatusTest;
@@ -17,7 +17,7 @@ class CartSiteController extends Controller
     public function getUserCarts(Request $request){
         $request->userid=intval($request->userid);
 //        $carts=cart::all()->where("user_id","equal","$request->userid");
-        $carts=cart::all()->where("user_id","equal","$request->userid")->load("books");
+        $carts=Cart::all()->where("user_id","equal","$request->userid")->load("books");
 
          $data=[
              "success"=>true,
@@ -36,7 +36,7 @@ class CartSiteController extends Controller
             "user_id"=>"required"
         ];
         $data=$this->validate($request,$rules);
-           cart::create($data)->books()->sync($request->books);
+           Cart::create($data)->books()->sync($request->books);
 //           $carts=cart::all()->where("user_id","equal","$request->user_id");
 //         $data=[
 //               "carts"=>$carts
