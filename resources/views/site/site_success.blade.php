@@ -1,10 +1,14 @@
 @extends("site.site_layouts.site_master")
 @section("content")
     <div class="container">
-        <div class="row mt-5 justify-content-center">
+        <div class="row justify-content-center mt-5">
+<div class="col-auto mt-5">
+    <h3 class="title text-white mt-5">{{auth()->user()->name}} {{" "}}your Order have been placed successfully</h3>
+</div>
+        </div>
+        <div class="row justify-content-center mt-0">
             <div class="col-auto">
-                <h2>your Order have been placed successfully</h2>
-                <button class="btn btn-round btn-instagram">continue shopping</button>
+                <a href="/" class="btn btn-round btn-instagram">continue shopping</a>
             </div>
         </div>
     </div>

@@ -20,6 +20,7 @@ class OrderSiteController extends Controller
 
 
     }
+
     public function StoreOrder(Request $request){
         $rules=[
             "phone_number"=>"required",
@@ -28,14 +29,15 @@ class OrderSiteController extends Controller
             "books_id"=>["array","required"],
             "user_id"=>"required",
             "title"=>"required",
-
-
         ];
         $data=$this->validate($request,$rules);
         Order::create($data)->books();
-        return Response::redirectTo("/");
-
+return view("site.site_success");
     }
+
+
+
+
     public function orderbyuser (user $user){
        $orders=order::where("user_id","like",$user->id)->get();
        $data=[
@@ -46,5 +48,7 @@ class OrderSiteController extends Controller
 
 
     }
+
+
 
 }
