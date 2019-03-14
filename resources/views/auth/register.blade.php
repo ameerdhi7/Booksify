@@ -76,7 +76,7 @@
                                                class=" text-md-right">Phone number</label>
 
                                         <input id="phone number" type="number" class="form-control"
-                                               name="phone_number" required>
+                                               name="phone_number" maxlength="8" required>
                                     </div>
                                     <div class="col-md-5">
                                         <label for="city"

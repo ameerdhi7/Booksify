@@ -59,7 +59,7 @@ class BookController extends Controller
 
         ];
         if (request()->poster!="")
-        $url=request()->poster->store('Uploads');
+        $url=request()->poster->store('uploads');
         $data=$this->validate($request,$rules);
         $data["poster"]=$url;
 
