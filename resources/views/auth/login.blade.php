@@ -4,7 +4,7 @@
 
     <div class="container-fluid h-100">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-5 mt-5">
+            <div class="col-md-4 mt-5">
                 <div class="card">
                     <div class="card-header card-header-info special blue-gradient-rgba m-0"><h4 class="title">{{ __('Login') }}</h4></div>
 

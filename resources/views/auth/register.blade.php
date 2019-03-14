@@ -5,7 +5,8 @@
             <div class="col-md-5">
                 @include("layouts.errors")
                 <div class="card">
-                    <div class="card-header special m-0 blue-gradient-rgba card-header-info"><h5 class="title">{{ __('Register') }}</h5></div>
+                    <div class="card-header special m-0 blue-gradient-rgba card-header-info"><h5
+                                class="title">{{ __('Register') }}</h5></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
