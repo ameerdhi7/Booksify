@@ -69,11 +69,11 @@
 
                             <div class="col-6">
 
-                                <input  name="poster" type="file" id="poster" class="form-control">
+                                <input name="poster" type="file" id="poster" class="form-control">
                                 <label for="poster">Upload Book Poster</label>
                             </div>
                             <div class="col-5">
-                                <select class="form-control " name="categories[]"  multiple data-style="btn btn-link"
+                                <select class="form-control " name="categories[]" multiple data-style="btn btn-link"
                                         id="writer_id">
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->type}}</option>

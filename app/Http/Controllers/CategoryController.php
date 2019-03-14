@@ -16,12 +16,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::all();
-        $data=[
-            "categories"=>$categories
+        $categories = Category::all();
+        $data = [
+            "categories" => $categories
         ];
 
-        return view("dashboard.categories.index_categories",$data);
+        return view("dashboard.categories.index_categories", $data);
     }
 
     /**
@@ -31,23 +31,23 @@ class CategoryController extends Controller
      */
     public function create()
     {
-      return view("dashboard.categories.create_categories");
+        return view("dashboard.categories.create_categories");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $rules=[
+        $rules = [
 
-            "type"=>"required",
+            "type" => "required",
         ];
 
-        $data=$this->validate($request,$rules);
+        $data = $this->validate($request, $rules);
         Category::create($data);
         return Response::redirectTo("/dashboard/categories/");
     }
@@ -55,7 +55,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -66,42 +66,42 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
     {
-        $data=["category"=>$category];
-        return view("dashboard.categories.update_categories",$data);
+        $data = ["category" => $category];
+        return view("dashboard.categories.update_categories", $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
     {
-      $rules=[
-          "type"=>"required"
-      ];
-      $data=$this->validate($request,$rules);
-      $category->update($data);
-      return Response::redirectTo("/dashboard/categories/");
+        $rules = [
+            "type" => "required"
+        ];
+        $data = $this->validate($request, $rules);
+        $category->update($data);
+        return Response::redirectTo("/dashboard/categories/");
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
-         $category->delete();
-         return Response::redirectTo("/dashboard/categories/");
+        $category->delete();
+        return Response::redirectTo("/dashboard/categories/");
     }
 }

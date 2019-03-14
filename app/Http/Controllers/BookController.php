@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Category;
 use App\Book;
 use Illuminate\Http\Request;
@@ -17,9 +18,9 @@ class BookController extends Controller
     public function index()
     {
 
-        $books=Book::with("categories")->paginate(10);
-        $data=["books"=>$books];
-        return view("dashboard.books.index",$data);
+        $books = Book::with("categories")->paginate(10);
+        $data = ["books" => $books];
+        return view("dashboard.books.index", $data);
 
     }
 
@@ -34,34 +35,34 @@ class BookController extends Controller
         $data = [
             "categories" => $categories
         ];
-        return view("dashboard.books.create",$data);
+        return view("dashboard.books.create", $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
 
-        $rules=[
+        $rules = [
 
-            "title"=>"required",
-            "price"=>"required",
-            "author"=>"required",
-            "isbn"=>"required",
-            "edition_number"=>"required",
-            "edition_year"=>"required",
-            "poster"=>['required','image'],
+            "title" => "required",
+            "price" => "required",
+            "author" => "required",
+            "isbn" => "required",
+            "edition_number" => "required",
+            "edition_year" => "required",
+            "poster" => ['required', 'image'],
 
         ];
-        if (request()->poster!="")
-        $url=request()->poster->store('uploads');
-        $data=$this->validate($request,$rules);
-        $data["poster"]=$url;
+        if (request()->poster != "")
+            $url = request()->poster->store('uploads');
+        $data = $this->validate($request, $rules);
+        $data["poster"] = $url;
 
         Book::create($data)->categories()->sync($request->categories);
         return Response::redirectTo("dashboard/books/");
@@ -72,7 +73,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Book  $book
+     * @param  \App\Book $book
      * @return \Illuminate\Http\Response
      */
     public function show(Book $book)
@@ -83,40 +84,40 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Book  $book
+     * @param  \App\Book $book
      * @return \Illuminate\Http\Response
      */
     public function edit(Book $book)
     {
-        $data=["book"=>$book];
-        return view("dashboard.books.update",$data);
+        $data = ["book" => $book];
+        return view("dashboard.books.update", $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Book  $book
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Book $book
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Book $book)
     {
-        $rules=[
+        $rules = [
 
-            "title"=>"required",
-            "price"=>"required",
-            "author"=>"required",
-            "isbn"=>"required",
-            "edition_number"=>"required",
-            "edition_year"=>"required",
-            "poster"=>['required','image'],
+            "title" => "required",
+            "price" => "required",
+            "author" => "required",
+            "isbn" => "required",
+            "edition_number" => "required",
+            "edition_year" => "required",
+            "poster" => ['required', 'image'],
 
 
         ];
-        if (request()->poster!="")
-            $url=request()->poster->store('uploads');
-        $data=$this->validate($request,$rules);
-        $data["poster"]=$url;
+        if (request()->poster != "")
+            $url = request()->poster->store('uploads');
+        $data = $this->validate($request, $rules);
+        $data["poster"] = $url;
         $book->update($data);
         $book->categories()->sync($request->categories);
         return Response::redirectTo("dashboard/books/");
@@ -126,7 +127,7 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Book  $book
+     * @param  \App\Book $book
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book)

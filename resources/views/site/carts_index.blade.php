@@ -3,7 +3,7 @@
 @section("content")
     <div class="container" id="carts">
 
-        <div class="row justify-content-center mt-5" >
+        <div class="row justify-content-center mt-5">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header blue-gradient-rgba text-white m-0">
@@ -28,23 +28,24 @@
                                 </tr>
                                 </thead>
 
-                                <tbody  v-for="cart in carts">
-                                <tr  v-for="book in cart.books">
+                                <tbody v-for="cart in carts">
+                                <tr v-for="book in cart.books">
 
-                                <td class="text-center">@{{cart.id}}</td>
-                                <td ><img class="img_cart" :src="`/${book.poster}`" alt=""></td>
-                                <td>@{{ book.title }} &dollar;</td>
-                                <td>@{{ book.price }}</td>
-                                <td> @{{ book.author }}</td>
-                                <td>@{{ book.edition_number }}</td>
-                                <td class="td-actions text-center">
-                                <form :action="`/books/carts/${cart.id}`" METHOD="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn-danger btn"><i class="material-icons">close</i>
-                                </button>
-                                </form>
-                                </td>
+                                    <td class="text-center">@{{cart.id}}</td>
+                                    <td><img class="img_cart" :src="`/${book.poster}`" alt=""></td>
+                                    <td>@{{ book.title }} &dollar;</td>
+                                    <td>@{{ book.price }}</td>
+                                    <td> @{{ book.author }}</td>
+                                    <td>@{{ book.edition_number }}</td>
+                                    <td class="td-actions text-center">
+                                        <form :action="`/books/carts/${cart.id}`" METHOD="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn-danger btn"><i
+                                                        class="material-icons">close</i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 </tbody>
 
@@ -68,29 +69,26 @@
             data: {
 
                 user: "{{auth()->user()->id}}",
-                carts:[],
+                carts: [],
 
             },
             methods: {
 
-               getUserCarts:function () {
+                getUserCarts: function () {
 
-                   axios.get("/books/carts/user",{
+                    axios.get("/books/carts/user/", {
 
-                       params:{
-                           userid:this.user,
-                       }
-
-
-                   }).then(response => {
-                       this.carts = response.data.carts;
-
-                   })
-
-               }
+                        params: {
+                            userid: this.user,
+                        }
 
 
+                    }).then(response => {
+                        this.carts = response.data.carts;
 
+                    })
+
+                }
 
 
             },

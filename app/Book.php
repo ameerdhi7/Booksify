@@ -37,16 +37,22 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Book extends Model
 {
-    protected $fillable=["poster","title","author","price","isbn","category_id","edition_number","edition_year"];
-    public  function categories(){
-     return $this->belongsToMany(Category::class);
-    }
-    public function orders(){
+    protected $fillable = ["poster", "title", "author", "price", "isbn", "category_id", "edition_number", "edition_year"];
 
-        return  $this->belongsToMany(Order::class);
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function orders()
+    {
+
+        return $this->belongsToMany(Order::class);
 
     }
-    public  function carts(){
+
+    public function carts()
+    {
         return $this->belongsToMany(Cart::class);
     }
 }
