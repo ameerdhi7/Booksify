@@ -43,7 +43,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -52,31 +52,34 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'image'=>["required","image"],
-            'phone_number'=>["required","max:8","min:6"],
-            'city'=>"required",
-            'region'=>"required"
+            'image' => ["image"],
+            'phone_number' => ["required","integer","min:11"],
+            'city' => ["required","string"],
+            'region' => ["required","string"]
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        $url=request()->image->store("uploads");
-        $data['image']=$url;
+        if (request()->image != ""){
+            $url = request()->image->store("uploads");
+        $data['image'] = $url;}
+        else
+            $data['image']="";
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'image'=>$data['image'],
-            'phone_number'=>$data['phone_number'],
-            'city'=>$data['city'],
-            'region'=>$data['region'],
+            'image' => $data['image'],
+            'phone_number' => $data['phone_number'],
+            'city' => $data['city'],
+            'region' => $data['region'],
         ]);
     }
 }

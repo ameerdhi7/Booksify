@@ -16,33 +16,34 @@
 
             <ul class="navbar-nav ml-auto">
 
-@auth
-                <li class="nav-item active">
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button type="submit" class="btn  black  btn-round ">
+                @auth
+                    <li class="nav-item active">
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn  black  btn-round ">
 
-                            logout <i class="material-icons">logout</i>
-                        </button>
-                    </form>
-                </li>
-                <li>
-                    <a href="#" class="btn black btn-round ">
-                        {{auth()->user()->name}} <img class=" img-circle  user_img " src="/{{auth()->user()->image}}" alt="">
-                    </a>
-                </li>
-    @else
-                <li>
-                    <a href="/register/" class="btn  black btn-round "> sign up
-                        <i class="material-icons">add</i>
-                    </a>
-                </li>
-    <li>
-        <a href="/login/" class="btn black btn-round "> login
-            <i class="material-icons">account_circle</i>
-        </a>
-    </li>
-    @endauth
+                                logout <i class="material-icons">logout</i>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="#" class="btn black btn-round ">
+                            {{auth()->user()->name}} <img class=" img-circle  user_img "
+                                                          src="/{{auth()->user()->image}}" alt="">
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/register/" class="btn  black btn-round "> sign up
+                            <i class="material-icons">add</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login/" class="btn black btn-round "> login
+                            <i class="material-icons">account_circle</i>
+                        </a>
+                    </li>
+                @endauth
             </ul>
 
         </div>

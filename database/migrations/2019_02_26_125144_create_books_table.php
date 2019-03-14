@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration
             $table->integer("edition_number");
             $table->integer("edition_year");
             $table->integer("isbn");
-           $table->timestamps();
+            $table->timestamps();
         });
     }
 

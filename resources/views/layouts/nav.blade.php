@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-light  bg-info  blue-gradient-rgba">
     <div class="container">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
             <span class="navbar-toggler-icon"></span>
@@ -22,13 +23,14 @@
                     <a class="nav-link" href="/dashboard/books/">Books <i class="material-icons">books</i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/categories/">categories<i class="material-icons">category</i></a>
+                    <a class="nav-link" href="/dashboard/categories/">categories<i
+                                class="material-icons">category</i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard/users/">Users <i class="material-icons">people</i></a>
                 </li>
                 {{--<li class="nav-item">--}}
-{{--<h5 class="btn btn-instagram btn-round">{{auth("admin")->admin()->name}} </h5>--}}
+                {{--<h5 class="btn btn-instagram btn-round">{{auth("admin")->admin()->name}} </h5>--}}
                 {{--</li>--}}
                 <li class="nav-item  ">
                     <form action="/admin/logout" method="post">

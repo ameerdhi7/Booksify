@@ -1,4 +1,4 @@
-<footer >
+<footer>
     <div class="container-fluid  mt-auto">
         <div class="row  mt-0 mb-0 justify-content-center">
             <div class="col-lg-3 col-sm-auto">
@@ -13,7 +13,7 @@
                     </a>
                     <button class="btn btn-sm btn-social btn-just-icon btn-round btn-twitter">
                         <i class="fa fa-twitter"></i>
-                        
+
                     </button>
                 </h6>
             </div>

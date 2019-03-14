@@ -35,9 +35,6 @@
                         </div>
 
 
-
-
-
                         <div class="row justify-content-between align-items-center mt-4">
                             <div class="col-5">
 
@@ -59,7 +56,7 @@
                             <div class="col-5">
                                 <!-- user city-->
 
-                                <input name="city" type="text" id="usercity" class="form-control" >
+                                <input name="city" type="text" id="usercity" class="form-control">
                                 <label for="usercity">City</label>
 
                             </div>
@@ -71,8 +68,6 @@
 
                             </div>
                         </div>
-
-
 
 
                         <div class="row justify-content-between align-items-center mt-4">
@@ -96,21 +91,14 @@
                                 </div>
 
 
-
                             </div>
 
                         </div>
 
 
-
-
-
-
-
-
-
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Submit</button>
+                        <button type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Submit
+                        </button>
 
                     </form>
 

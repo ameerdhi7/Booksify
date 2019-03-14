@@ -1,4 +1,3 @@
-
 <!-- ========= This the order page .. by defualt the order location
 will be on the information that user typed in registeration form
 and there is a button that enable the user th change and update the order location if he want -->
@@ -13,7 +12,7 @@ and there is a button that enable the user th change and update the order locati
             </div>
             <div class="row justify-content-center  align-items-center">
 
-                <div   class="col-lg-5 col-sm-7">
+                <div class="col-lg-5 col-sm-7">
 
                     @include("layouts.errors")
                     <div class="card">
@@ -21,9 +20,11 @@ and there is a button that enable the user th change and update the order locati
                             <h4 class="text-center">
                                 Place your Order
                             </h4>
-                            <h6  class="text-center"> {{auth()->user()->name }} {{""}} , your order will deliver dependent on the information you have typed when registered , you can change your contact as below :
+                            <h6 class="text-center"> {{auth()->user()->name }} {{""}} , your order will deliver
+                                dependent on the information you have typed when registered , you can change your
+                                contact as below :
 
-                                </h6>
+                            </h6>
                         </div>
                         <!--Card content-->
                         <div class="card-body px-lg-5">
@@ -34,7 +35,8 @@ and there is a button that enable the user th change and update the order locati
                                     <div class="col-lg-5 col-sm-auto">
                                         <!-- Order Phone number-->
 
-                                        <input value="{{auth()->user()->phone_number}}" type="number" name="phone_number" id="phone_number" class="form-control">
+                                        <input value="{{auth()->user()->phone_number}}" type="number"
+                                               name="phone_number" id="phone_number" class="form-control">
                                         <label for="phone_number">Type your phone Number</label>
 
                                     </div>
@@ -45,7 +47,7 @@ and there is a button that enable the user th change and update the order locati
                                         <!-- Order City-->
 
                                         <input value="{{auth()->user()->city}}"
-                                               name="city" type="text"  id="city" class="form-control">
+                                               name="city" type="text" id="city" class="form-control">
                                         <label for="city">Type your city</label>
 
                                     </div>
@@ -55,21 +57,23 @@ and there is a button that enable the user th change and update the order locati
                                     <div class="col">
                                         <!-- Order region-->
 
-                                        <input value="{{auth()->user()->region}}" name="region"  type="text"  id="region" class="form-control">
+                                        <input value="{{auth()->user()->region}}" name="region" type="text" id="region"
+                                               class="form-control">
                                         <label for="region">Type your Region</label>
 
                                     </div>
 
                                 </div>
-                                    @foreach($books as $book)
+                                @foreach($books as $book)
                                     <input name="books_id[]" value="{{$book->id}}" type="hidden">
-                                    @endforeach
+                                @endforeach
 
                                 <input name="user_id" type="hidden" value="{{auth()->user()->id}}">
                                 <input name="title" type="hidden" value="{{$book->title}}">
 
                                 <!-- Submit button -->
-                                <button @click="showmessage" type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Order
+                                <button @click="showmessage" type="submit"
+                                        class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Order
                                 </button>
 
                             </form>
@@ -99,8 +103,8 @@ and there is a button that enable the user th change and update the order locati
 
                         </div>
 
-        @endforeach
-    </div>
+                    @endforeach
+                </div>
             </div>
             @include("site.site_layouts.site_footer")
 
@@ -117,15 +121,13 @@ and there is a button that enable the user th change and update the order locati
             //
 //             },
             methods: {
-                showmessage:function () {
+                showmessage: function () {
 
 
                 },
 //
 //
             },
-
-
 
 
         });

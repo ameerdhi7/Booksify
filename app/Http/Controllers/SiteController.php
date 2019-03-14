@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Book;
 use App\category;
 use Illuminate\Http\Request;
@@ -9,8 +10,8 @@ use Illuminate\Support\Facades\Response;
 
 class SiteController extends Controller
 {
-    public function home(){
-
+    public function home()
+    {
 
 
         return view("site.home");
@@ -18,16 +19,17 @@ class SiteController extends Controller
     }
 
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
 
 
-        $term=$request->term;
+        $term = $request->term;
         //Here im checking if the type of term is string i will go with title column
         // else meaning the type of term is int so i will go with price column
-    if(intval($term)==0)
-        $books = Book::where('title','like',"%$term%")->get();
+        if (intval($term) == 0)
+            $books = Book::where('title', 'like', "%$term%")->get();
         else
-            $books = Book::where('price','like',"%$term%")->get();
+            $books = Book::where('price', 'like', "%$term%")->get();
 
         $data = [
             "books" => $books
@@ -35,10 +37,11 @@ class SiteController extends Controller
         return Response::json($data);
     }
 
-    public function getAllBooks(){
+    public function getAllBooks()
+    {
 
-         $books=Book::orderBy("id","desc")->with("categories")->paginate(12);
- $response = [
+        $books = Book::orderBy("id", "desc")->with("categories")->paginate(12);
+        $response = [
             "success" => true,
             "books" => $books,
         ];

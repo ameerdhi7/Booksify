@@ -33,13 +33,10 @@
                             <div class=" row mt-5">
                                 <div class="col">
                                     <label for="adminpassword">admin password</label>
-                                    <input id="adminpassword"  placeholder="admin password"
+                                    <input id="adminpassword" placeholder="admin password"
                                            name="password" class="form-control" type="password">
                                 </div>
                             </div>
-
-
-
 
 
                             <div class="row mt-3 justify-content-center">

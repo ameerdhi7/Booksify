@@ -15,20 +15,23 @@
                 <!--Card content-->
                 <div class="card-body px-lg-5">
                     <!-- Form -->
-                    <form action="/dashboard/users/{{$user->id}}" METHOD="post" class="text-center" enctype="multipart/form-data">
+                    <form action="/dashboard/users/{{$user->id}}" METHOD="post" class="text-center"
+                          enctype="multipart/form-data">
                         @csrf
                         @method('patch')
                         <div class="row justify-content-between align-items-center mt-4">
                             <div class="col-5">
                                 <!-- users  name-->
-                                <input value="{{$user->name}}" name="name" type="text" id="username" class="form-control">
+                                <input value="{{$user->name}}" name="name" type="text" id="username"
+                                       class="form-control">
                                 <label for="username">User Name</label>
 
                             </div>
                             <div class="col-5">
 
                                 <!--user Email  -->
-                                <input value="{{$user->email}}" name="email" type="email" id="useremail" class="form-control">
+                                <input value="{{$user->email}}" name="email" type="email" id="useremail"
+                                       class="form-control">
                                 <label for="useremail">User email</label>
 
                             </div>
@@ -40,14 +43,15 @@
 
                                 <!-- user password -->
 
-                                <input  name="password" type="password" id="userpassword" class="form-control">
+                                <input name="password" type="password" id="userpassword" class="form-control">
                                 <label for="userpassword">Password</label>
 
                             </div>
                             <div class="col-5">
 
                                 <!--user phone number  -->
-                                <input value="{{$user->phone_number}}" name="phone_number" type="number" id="user phone number" class="form-control">
+                                <input value="{{$user->phone_number}}" name="phone_number" type="number"
+                                       id="user phone number" class="form-control">
                                 <label for="user phone number">Phone Number</label>
 
                             </div>
@@ -56,14 +60,16 @@
                             <div class="col-5">
                                 <!-- user city-->
 
-                                <input value="{{$user->city}}" name="city" type="text" id="usercity" class="form-control" >
+                                <input value="{{$user->city}}" name="city" type="text" id="usercity"
+                                       class="form-control">
                                 <label for="usercity">City</label>
 
                             </div>
                             <div class="col-5">
 
                                 <!--user region  -->
-                                <input value="{{$user->region}}" name="region" type="text" id="userregion" class="form-control">
+                                <input value="{{$user->region}}" name="region" type="text" id="userregion"
+                                       class="form-control">
                                 <label for="userregion">Region</label>
 
                             </div>
@@ -81,7 +87,7 @@
         <span class="btn btn-raised btn-round btn-default btn-file">
             <span class="fileinput-new">Select image</span>
             <span class="fileinput-exists">Change</span>
-            <input  type="file" name="image"/>
+            <input type="file" name="image"/>
         </span>
                                         <a href="#pablo" class="btn btn-danger btn-round fileinput-exists"
                                            data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
@@ -91,7 +97,9 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 mt-0 btn-round">Submit</button>
+                        <button type="submit" class="btn btn-outline-info btn-block z-depth-0 my-5 mt-0 btn-round">
+                            Submit
+                        </button>
                     </form>
 
                 </div>

@@ -8,8 +8,11 @@
                 <div class="card-header blue-gradient-rgba text-white m-0">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto"><h4>Orders Table</h4></div>
-                        <div class="col-auto"><a class="btn btn-success btn-round btn-sm blue-gradient-rgba" href="/dashboard/books/create" ><i class="material-icons">add</i></a></div>
-                    </div></div>
+                        <div class="col-auto"><a class="btn btn-success btn-round btn-sm blue-gradient-rgba"
+                                                 href="/dashboard/books/create"><i class="material-icons">add</i></a>
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="card-body">
@@ -17,13 +20,13 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th  class="text-center">#</th>
-                                <th >user name</th>
+                                <th class="text-center">#</th>
+                                <th>user name</th>
                                 <th>book orderd</th>
-                                <th >phone number</th>
-                                <th >region</th>
-                                <th >city</th>
-                                <th >Date</th>
+                                <th>phone number</th>
+                                <th>region</th>
+                                <th>city</th>
+                                <th>Date</th>
                             </tr>
                             </thead>
 
@@ -44,16 +47,16 @@
                             @endforeach
                             </tbody>
                         </table>
-                </div>
-
-                </div>
-
                     </div>
 
                 </div>
+
             </div>
 
         </div>
+    </div>
+
+    </div>
     </div>
 @endsection
 

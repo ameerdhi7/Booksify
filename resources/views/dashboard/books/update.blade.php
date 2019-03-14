@@ -83,7 +83,7 @@
                             <div class="col-5">
 
                                 <!--Book ISBN  -->
-                                <select class="form-control" name="categories[]"  multiple data-style="btn btn-link"
+                                <select class="form-control" name="categories[]" multiple data-style="btn btn-link"
                                         id="writer_id">
                                     @foreach($book->categories as $category)
                                         <option value="{{$category->id}}">{{$category->type}}</option>

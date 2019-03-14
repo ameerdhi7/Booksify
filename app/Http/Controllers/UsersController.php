@@ -16,9 +16,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users=User::all();
-        $data=["users"=>$users];
-        return view("dashboard.users.users_index",$data);
+        $users = User::all();
+        $data = ["users" => $users];
+        return view("dashboard.users.users_index", $data);
     }
 
     /**
@@ -34,25 +34,25 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $rules=[
-          "name"=>"required" ,
-          "email"=>["required","unique:users"],
-          "password"=>"required" ,
-          "phone_number"=>"required" ,
-          "city"=>"required" ,
-          "region"=>"required" ,
-          "image"=>['required','image']
+        $rules = [
+            "name" => "required",
+            "email" => ["required", "unique:users"],
+            "password" => "required",
+            "phone_number" => "required",
+            "city" => "required",
+            "region" => "required",
+            "image" => ['required', 'image']
         ];
-        if (request()->image!="")
-            $url=request()->image->store("uploads");
-        $data=$this->validate($request,$rules);
-        $data['image']=$url;
-         $data['password']=Hash::make($data['password']);
+        if (request()->image != "")
+            $url = request()->image->store("uploads");
+        $data = $this->validate($request, $rules);
+        $data['image'] = $url;
+        $data['password'] = Hash::make($data['password']);
         User::create($data);
 
         return Response::redirectTo("/dashboard/users/");
@@ -62,7 +62,7 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -73,38 +73,38 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(user $user)
     {
-        $data=["user"=>$user];
-        return view("dashboard.users.users_update",$data);
+        $data = ["user" => $user];
+        return view("dashboard.users.users_update", $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,user $user)
+    public function update(Request $request, user $user)
     {
-        $rules=[
-            "name"=>"required" ,
-            "email"=>["required","unique:users"],
-            "password"=>"required" ,
-            "phone_number"=>"required" ,
-            "city"=>"required" ,
-            "region"=>"required" ,
-            "image"=>['required','image']
+        $rules = [
+            "name" => "required",
+            "email" => ["required", "unique:users"],
+            "password" => "required",
+            "phone_number" => "required",
+            "city" => "required",
+            "region" => "required",
+            "image" => ['required', 'image']
         ];
-        if (request()->image!="")
-            $url=request()->image->store("uploads");
-        $data=$this->validate($request,$rules);
-        $data['image']=$url;
-        $data['password']=Hash::make($data['password']);
+        if (request()->image != "")
+            $url = request()->image->store("uploads");
+        $data = $this->validate($request, $rules);
+        $data['image'] = $url;
+        $data['password'] = Hash::make($data['password']);
         $user->update($data);
         return Response::redirectTo("/dashboard/users/");
     }
@@ -112,12 +112,12 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(user $user)
     {
-$user->delete();
-return Response::redirectTo("/dashboard/users/");
+        $user->delete();
+        return Response::redirectTo("/dashboard/users/");
     }
 }
