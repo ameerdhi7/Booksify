@@ -4,7 +4,7 @@ and there is a button that enable the user th change and update the order locati
 @extends("site.site_layouts.site_master")
 @section("content")
     <div class="h-100">
-        <div class="container-fluid rgba-black-strong h-100 " id="order">
+        <div class="container-fluid  h-100 " id="order">
             <div class="row mt-5">
                 <div class="col">
                     <h1 class="title text-white">Booksify</h1>
@@ -16,7 +16,8 @@ and there is a button that enable the user th change and update the order locati
 
                     @include("layouts.errors")
                     <div class="card">
-                        <div class="card-header m-0 text-white blue-gradient-rgba">
+                        <div class="card-header m-0
+                        special text-white blue-gradient-rgba">
                             <h4 class="text-center">
                                 Place your Order
                             </h4>
