@@ -3,7 +3,7 @@ will be on the information that user typed in registeration form
 and there is a button that enable the user th change and update the order location if he want -->
 @extends("site.site_layouts.site_master")
 @section("content")
-    <div class="h-100 order_vector ">
+    <div class="h-100">
         <div class="container-fluid rgba-black-strong h-100 " id="order">
             <div class="row mt-5">
                 <div class="col">

@@ -15,31 +15,35 @@
             <a class="btn btn-round black text-white " href="/"><i class="material-icons">home</i>Home</a>
 
             <ul class="navbar-nav ml-auto">
+                <li><a class="btn btn-round  btn-sm mr-2 mt-2  black " href="http://ameerdhiaa.codelab.camp/dashboard/books/"><i class="material-icons">dashboard</i>Dashboard</a>
+                </li>
+                <li><a class="btn btn-round  btn-sm mr-2 mt-2 black " href=""><i class="material-icons">rss_feed
+                        </i>api</a></li>
 
                 @auth
                     <li class="nav-item active">
                         <form action="{{route('logout')}}" method="post">
                             @csrf
-                            <button type="submit" class="btn  black  btn-round ">
+                            <button type="submit" class="btn mt-2 btn-sm mr-2  black  btn-round ">
 
                                 logout <i class="material-icons">logout</i>
                             </button>
                         </form>
                     </li>
                     <li>
-                        <a href="#" class="btn black btn-round ">
+                        <a href="#" class="btn btn-sm mt-2 mr-2 black btn-round ">
                             {{auth()->user()->name}} <img class=" img-circle  user_img "
                                                           src="/{{auth()->user()->image}}" alt="">
                         </a>
                     </li>
                 @else
                     <li>
-                        <a href="/register/" class="btn  black btn-round "> sign up
+                        <a href="/register/" class="btn btn-sm mt-2 mr-2  black btn-round "> sign up
                             <i class="material-icons">add</i>
                         </a>
                     </li>
                     <li>
-                        <a href="/login/" class="btn black btn-round "> login
+                        <a href="/login/" class="btn mt-2 btn-sm mr-2 black btn-round "> login
                             <i class="material-icons">account_circle</i>
                         </a>
                     </li>

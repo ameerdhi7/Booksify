@@ -5,9 +5,10 @@
 
         <div class="row justify-content-between  mt-5">
             <div class="col-lg-5 col-sm-auto">
-                <h1 class="title text-white">
-                    Booksify
-                </h1>
+                <a href="http://ameerdhiaa.codelab.camp"><h1 class="title text-white">
+                        Booksify
+                    </h1></a>
+
             </div>
             <div class="col-lg-7  col-sm-5"><h3 class="text-white ml-3 wow slideInLeft" data-wow-delay="0.3"
                                                 data-wow-duration="1s">

@@ -6,9 +6,9 @@
         <div class="row justify-content-center mt-5">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header blue-gradient-rgba text-white m-0">
+                    <div class="card-header special blue-gradient-rgba text-white m-0">
                         <div class="row justify-content-between align-items-center">
-                            <div class="col-auto "><h4>IN CARTS</h4></div>
+                            <div class="col-auto "><h4 class="title">IN CARTS</h4></div>
 
                         </div>
                     </div>

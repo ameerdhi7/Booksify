@@ -137,31 +137,23 @@
 .black {
     background: #000000 !important;
 }
-
 .animate:hover {
     background-color: rgba(0, 0, 0, 0.7);
     transform: scale(1, 1.1);
     overflow: hidden;
 
-
 }
-
 .nav_transparent {
     background: transparent !important;
 }
-
 ._footer {
     margin-top: 200px;
 }
-
 .img_height_order {
-    max-height: 48vh;;
+    max-height: 50vh;;
     object-fit: cover;
     transition: all 1s;
-
-
 }
-
 .rgba {
     min-height: 100%;
 }
