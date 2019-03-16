@@ -1,9 +1,11 @@
 # Booksify
-     booksify is a E-commercial web app demo made with laravel 5.7 in garage of codelab camp
-check it here : http://ameerdhiaa.codelab.camp/
+     Booksify is a E-commercial web App Demo Made With Laravel 5.7 In Garage of Codelab Camp
+Check It Here : http://ameerdhiaa.codelab.camp/ <br/>
+
  # Booksify Rest api:-
- method (get)<br/> --
- url :- http://ameerdhiaa.codelab.camp/books/
- the data paginated on 12 books per request. 
+ Method :- Get <br/> 
+ URL :- http://ameerdhiaa.codelab.camp/books/ <br />
+ 
+ The Data Paginated On 12 Books Per Request. 
  
 
