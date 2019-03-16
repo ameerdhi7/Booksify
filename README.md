@@ -1,4 +1,3 @@
-# Booksify
 Booksify is an E-commercial web App Demo Made With Laravel 5.7 In Garage of Codelab Camp <br/>
 
 Check It Here : http://ameerdhiaa.codelab.camp/ <br/>
