@@ -13,8 +13,8 @@ class OrderSiteController extends Controller
     public function orderForm($id)
     {
 
-
-        $books = Book::where("id", "like", "$id")->get();
+$ids = \Session::get("books",[]);
+        $books = Book::findMany($ids);
         $data = [
             "books" => $books
         ];

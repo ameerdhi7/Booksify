@@ -62,15 +62,15 @@
                     </div>
                     <div class="card-footer justify-content-center align-items-center">
 
-                        <form action="/books/carts" method="post">
+                        {{--<form action="/books/carts" method="post">--}}
                             @csrf
                             <input name="books[]" :value=" book.id " type="hidden">
                             @auth
                                 <input name="user_id" value="{{auth()->user()->id}}" type="hidden">
                             @endauth
-                            <button type="submit" class="btn btn-round special"><i class="material-icons">add_shopping_cart</i>Cart
+                            <button @click="addToCart(book.id)" type="submit" class="btn btn-round special"><i class="material-icons">add_shopping_cart</i>Cart
                             </button>
-                        </form>
+                        {{--</form>--}}
                         <a :href="`/books/orders/${book.id}`"
                            class="btn btn-outline-light special btn-md btn-round"><i
                                     class="material-icons">shop</i>Buy
@@ -98,6 +98,11 @@
 
             },
             methods: {
+                addToCart(bookId){
+                    axios.post(`/books/carts/add/${bookId}`).then(response => {
+
+                    });
+                },
                 getAllBooks: function () {
                     axios.get("/books/").then(response => {
 

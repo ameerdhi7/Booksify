@@ -32,6 +32,7 @@ Route::group(["middleware" => "auth"], function () {
     Route::get('/books/orders/{book}', "OrderSiteController@orderform");
     Route::post('/books/orders/create/', "OrderSiteController@storeorder");
     Route::post('/books/carts/', "CartSiteController@store"); //store to cart
+    Route::post('/books/carts/add/{book}', "CartSiteController@addToCart"); //store to cart
     Route::get('/books/carts/', "CartSiteController@index"); //cart index
     Route::get('/books/carts/user/', "CartSiteController@getUserCarts"); //get user carts
     Route::delete('/books/carts/{cart}', "CartSiteController@delete"); //delete cart
