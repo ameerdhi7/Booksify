@@ -1,22 +1,17 @@
 @extends("site.site_layouts.site_master")
 @section("content")
-
     <div class="container" id="books">
-
         <div class="row justify-content-between  mt-5">
             <div class="col-lg-5 col-sm-auto">
                 <a href="http://ameerdhiaa.codelab.camp"><h1 class="title text-white">
-                        Booksify
-                    </h1></a>
-
+                        Booksify</h1></a>
             </div>
             <div class="col-lg-7  col-sm-5"><h3 class="text-white ml-3 wow slideInLeft" data-wow-delay="0.3"
                                                 data-wow-duration="1s">
-                    Scientific books , Philosophical, Novels...Filter and Find your best Book By it's Title or Price
-                    quickly !
+                    Scientific Books , Philosophical, Novels...Filter And Find Your Best Book By It's Title or Price
+                    Quickly !
                 </h3></div>
         </div>
-
         <div class="text-white  row mt-0 justify-content-center align-items-center">
 
             <div class="col-lg-3 col-sm-12 ">
@@ -67,9 +62,7 @@
                     </div>
                     <div class="card-footer justify-content-center align-items-center">
 
-
-                        <form action="/books/carts/" method="post">
-
+                        <form action="/books/carts" method="post">
                             @csrf
                             <input name="books[]" :value=" book.id " type="hidden">
                             @auth
@@ -77,8 +70,6 @@
                             @endauth
                             <button type="submit" class="btn btn-round special"><i class="material-icons">add_shopping_cart</i>Cart
                             </button>
-
-
                         </form>
                         <a :href="`/books/orders/${book.id}`"
                            class="btn btn-outline-light special btn-md btn-round"><i
@@ -124,13 +115,9 @@
                         params: {
                             term: this.term
                         }
-
-
                     }).then(response => {
                         this.books = response.data.books;
                     })
-
-
                 },
                 order: function () {
                     axios.get("/books/orders/", {
@@ -138,10 +125,7 @@
                             term: "",
                         }
                     })
-
                 }
-
-
             },
 
             mounted() {

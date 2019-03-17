@@ -2,7 +2,7 @@
 @extends("layouts.master")
 @section("content")
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-2">
         <div class="col-12">
             <div class="card">
                 <div class="card-header blue-gradient-rgba m-0 text-white">
@@ -20,11 +20,12 @@
                             <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>User name</th>
+                                <th>User Name</th>
                                 <th> Email</th>
                                 <th> City</th>
                                 <th> Region</th>
-                                <th class="text-center"> user image</th>
+                                <th class="text-center">Image</th>
+                                <th class="text-center"> Registered Date</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                     <td>{{$user->city}}</td>
                                     <td>{{$user->region}}</td>
                                     <td class="text-center"><img class="user_img" src="/{{$user->image}}" alt=""></td>
+                                    <td class="text-center">{{$user->created_at}}</td>
                                     <td class="td-actions text-right">
 
                                         <div class="btn-group" role="group" aria-label="Basic example">

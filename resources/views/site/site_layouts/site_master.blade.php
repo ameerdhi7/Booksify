@@ -32,16 +32,15 @@
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/popper.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap-material-design.js" type="text/javascript"></script>
-    <script src="/js/nouislider.min.js" type="text/javascript"></script>
+    {{--<script src="/js/nouislider.min.js" type="text/javascript"></script>--}}
     {{--<script src="/js/bootstrap-tagsinput.js"></script>--}}
     <script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {{--<script async defer src="https://buttons.github.io/buttons.js"></script>--}}
     <script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
     <!--  ==========  vue and axios ===========  -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     @yield("scripts")
-
 </div>
 </body>
 </html>

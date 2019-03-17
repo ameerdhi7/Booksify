@@ -1,9 +1,6 @@
-<!-- =========== users update form view===========-->
-
-
+<!-- =========== users update view forum===========-->
 @extends("layouts.master")
 @section("content")
-
     <div class="row justify-content-center">
 
         <div class="col-sm-6">

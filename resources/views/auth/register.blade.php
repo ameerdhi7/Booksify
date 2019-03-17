@@ -30,11 +30,9 @@
                                 <div class="col-md-5">
                                     <label for="email"
                                            class="  text-md-right">{{ __('E-Mail Address') }}</label>
-
                                     <input id="email" type="email"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                            name="email" value="{{ old('email') }}" required>
-
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -42,8 +40,6 @@
                                     @endif
                                 </div>
                             </div>
-
-
                             <div class="form-group align-items-center  row ">
 
                                 <div class="col-md-5">
@@ -73,17 +69,17 @@
                             <div class="form-group align-items-center  row ">
 
                                 <div class="col-md-5">
-                                    <label for="phone number"
-                                           class=" text-md-right">Phone number</label>
+                                    <label  for="phone number"
+                                           class="text-md-right">Phone number</label>
 
-                                    <input id="phone number" type=number" class="form-control"
+                                    <input value="{{old("phone_number")}}" id="phone number" type=number" class="form-control"
                                            name="phone_number">
                                 </div>
                                 <div class="col-md-5">
                                     <label for="city"
                                            class=" text-md-right">City</label>
 
-                                    <input id="city" type="text" class="form-control"
+                                    <input value="{{old("city")}}" id="city" type="text" class="form-control"
                                            name="city" required>
                                 </div>
                             </div>
@@ -94,7 +90,7 @@
                                 <div class="col-md-6">
                                     <label for="region"
                                            class=" text-md-right">Region</label>
-                                    <input id="region" type="text" class=" form-control"
+                                    <input value="{{old("region")}}" id="region" type="text" class=" form-control"
                                            name="region" required>
                                 </div>
 

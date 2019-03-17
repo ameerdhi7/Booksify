@@ -5,7 +5,7 @@
             @include("layouts.errors")
             <div class="card">
                 <div class="card-header mt-0  blue-gradient-rgba">
-                   <h5 class="text-white">Login as admin</h5>
+                   <h5 class="text-white title">Login As Admin</h5>
                 </div>
                 <div class="card-body">
                     <form action="/admin/login" method="post">

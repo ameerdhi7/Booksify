@@ -1,7 +1,6 @@
-<!-- ================ TO SHOW USERS ORDERS INDEX ============ -->
+<!-- ================ TO SHOW USERS ORDERS  ============ -->
 @extends("layouts.master")
 @section("content")
-
     <div class="row justify-content-center mt-3">
         <div class="col-12">
             <div class="card">
@@ -11,8 +10,6 @@
                         <div class="col-auto"></div>
                     </div>
                 </div>
-
-
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -22,9 +19,9 @@
                                 <th>user name</th>
                                 <th>book orderd</th>
                                 <th>phone number</th>
-                                <th>region</th>
+                                <th>Region</th>
                                 <th>city</th>
-                                <th>order date</th>
+                                <th>Order Date</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -42,14 +39,10 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
-
     </div>
     </div>
 @endsection

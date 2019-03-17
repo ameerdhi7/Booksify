@@ -7,14 +7,11 @@
                     <div class="card-header-info m-0 blue-gradient-rgba card-header">
                         <h5>        {{auth()->user()->name}}' books
                         </h5>
-
                     </div>
-
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table bg-light table-shopping">
                                 <thead>
-
                                 <tr>
                                     <th>#</th>
                                     <th>book poster</th>
@@ -38,17 +35,13 @@
                                             </td>
                                             <td class="td-name">
                                                 {{$book->title}}
-
                                             </td>
                                             <td>
                                                 {{$book->price}} &dollar;
-
                                             </td>
                                             <td>
-                                                {{$book->author}}                           </td>
+                                                {{$book->author}}</td>
                                             <td>
-
-
                                                 <form action="/books/carts/{{$cart->id}}" method="post">
                                                     @csrf
                                                     @method('delete')
@@ -57,21 +50,15 @@
                                                     </button>
                                                 </form>
                                             </td>
-
-
                                         </tr>
                                     @endforeach
                                 @endforeach
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
-
 @endsection

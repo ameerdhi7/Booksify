@@ -13,7 +13,6 @@
                     </a>
                     <button class="btn btn-sm btn-social btn-just-icon btn-round btn-twitter">
                         <i class="fa fa-twitter"></i>
-
                     </button>
                 </h6>
             </div>

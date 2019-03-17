@@ -17,8 +17,6 @@ class SiteController extends Controller
         return view("site.home");
 
     }
-
-
     public function search(Request $request)
     {
 
@@ -36,10 +34,8 @@ class SiteController extends Controller
         ];
         return Response::json($data);
     }
-
     public function getAllBooks()
     {
-
         $books = Book::orderBy("id", "desc")->with("categories")->paginate(12);
         $response = [
             "success" => true,
