@@ -18,7 +18,7 @@ class CartSiteController extends Controller
 
     }
 
-    p
+    
 public function addToCart(Book $book){
        $books = \Session::get("books",[]);
        if(in_array($book->id,$books)){
