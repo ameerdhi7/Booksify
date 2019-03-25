@@ -12,17 +12,14 @@ class OrderSiteController extends Controller
 {
     public function orderForm($id)
     {
-
 $ids = \Session::get("books",[]);
+$ids[]=$id;
         $books = Book::findMany($ids);
         $data = [
             "books" => $books
         ];
         return view("site.site_layouts.order_form", $data);
-
-
     }
-
     public function StoreOrder(Request $request)
     {
         $rules = [
@@ -37,8 +34,6 @@ $ids = \Session::get("books",[]);
         Order::create($data)->books();
         return view("site.site_success");
     }
-
-
     public function orderbyuser(user $user)
     {
         $orders = Order::where("user_id", "like", $user->id)->get();

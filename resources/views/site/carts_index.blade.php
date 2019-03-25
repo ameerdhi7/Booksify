@@ -68,23 +68,15 @@
             el: "#carts",
             data: {
 
-                user: "{{auth()->user()->id}}",
-                carts: [],
+                books: [],
 
             },
             methods: {
 
                 getUserCarts: function () {
 
-                    axios.get("/books/carts/user/", {
-
-                        params: {
-                            userid: this.user,
-                        }
-
-
-                    }).then(response => {
-                        this.carts = response.data.carts;
+                    axios.get("/books/carts/cart").then(response => {
+                        this.books = response.data.books;
 
                     })
 

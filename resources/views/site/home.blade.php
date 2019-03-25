@@ -57,35 +57,29 @@
                                 </h5>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="card-footer justify-content-center align-items-center">
 
                         {{--<form action="/books/carts" method="post">--}}
-                            @csrf
-                            <input name="books[]" :value=" book.id " type="hidden">
-                            @auth
-                                <input name="user_id" value="{{auth()->user()->id}}" type="hidden">
-                            @endauth
-                            <button @click="addToCart(book.id)" type="submit" class="btn btn-round special"><i class="material-icons">add_shopping_cart</i>Cart
-                            </button>
+                        @csrf
+                        <input name="books[]" :value=" book.id " type="hidden">
+                        @auth
+                            <input name="user_id" value="{{auth()->user()->id}}" type="hidden">
+                        @endauth
+                        <button @click="addToCart(book.id)" type="submit" class="btn btn-round special"><i
+                                    class="material-icons">add_shopping_cart</i>Cart
+                        </button>
                         {{--</form>--}}
                         <a :href="`/books/orders/${book.id}`"
                            class="btn btn-outline-light special btn-md btn-round"><i
                                     class="material-icons">shop</i>Buy
-
-
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 @endsection
-
 @section("scripts")
     <script>
         let vue = new Vue({
@@ -94,26 +88,18 @@
                 term: "",
                 books: [],
                 pagination: [],
-
-
             },
             methods: {
-                addToCart(bookId){
+                addToCart(bookId) {
                     axios.post(`/books/carts/add/${bookId}`).then(response => {
-
                     });
                 },
                 getAllBooks: function () {
                     axios.get("/books/").then(response => {
-
                         this.books = response.data.books.data;
                         this.pagination = response.data.books;
-
                     })
-
                 },
-
-
                 search: function () {     // The search work and filter by price and books title on key up the axios gonna send an api request on the char.
 
                     axios.get("/booksbysearch/", {

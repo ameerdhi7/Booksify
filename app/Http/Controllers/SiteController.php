@@ -20,7 +20,6 @@ class SiteController extends Controller
     public function search(Request $request)
     {
 
-
         $term = $request->term;
         //Here im checking if the type of term is string i will go with title column
         // else meaning the type of term is int so i will go with price column

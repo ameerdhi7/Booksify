@@ -1,6 +1,6 @@
-<!-- ========= This the order page .. by defualt the order location
-will be on the information that user typed in registeration form
-and there is a button that enable the user th change and update the order location if he want -->
+<!-- ========= This is the order form page .. by defualt the order location detalis
+will relay on the information that user typed in regeister form
+and there is a optional inputs that enable the user to change and update the order location if he want ====== -->
 @extends("site.site_layouts.site_master")
 @section("content")
     <div class="h-100">
@@ -28,42 +28,33 @@ and there is a button that enable the user th change and update the order locati
                             </h6>
                         </div>
                         <!--Card content-->
-                        <div class="card-body px-lg-5">
+                        <div class="card-body px-lg-5">\
                             <!-- Form -->
                             <form action="/books/orders/create" method="post" class="text-center">
                                 @csrf
                                 <div class="row align-items-center justify-content-between mt-4">
                                     <div class="col-lg-5 col-sm-auto">
                                         <!-- Order Phone number-->
-
                                         <input value="{{auth()->user()->phone_number}}" type="number"
                                                name="phone_number" id="phone_number" class="form-control">
                                         <label for="phone_number">Type your phone Number</label>
-
                                     </div>
-
                                 </div>
                                 <div class="row  align-items-center justify-content-between mt-4">
                                     <div class="col">
                                         <!-- Order City-->
-
                                         <input value="{{auth()->user()->city}}"
                                                name="city" type="text" id="city" class="form-control">
                                         <label for="city">Type your city</label>
-
                                     </div>
-
                                 </div>
                                 <div class="row align-items-center justify-content-between mt-4">
                                     <div class="col">
                                         <!-- Order region-->
-
                                         <input value="{{auth()->user()->region}}" name="region" type="text" id="region"
                                                class="form-control">
                                         <label for="region">Type your Region</label>
-
                                     </div>
-
                                 </div>
                                 @foreach($books as $book)
                                     <input name="books_id[]" value="{{$book->id}}" type="hidden">
@@ -76,11 +67,8 @@ and there is a button that enable the user th change and update the order locati
                                 <button @click="showmessage" type="submit"
                                         class="btn btn-outline-info btn-block z-depth-0 my-5 btn-round">Order
                                 </button>
-
                             </form>
-
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-auto">
@@ -92,7 +80,6 @@ and there is a button that enable the user th change and update the order locati
                                     <img class="img  img_height_order " src="/{{$book->poster}}">
                                 </div>
                             </div>
-
                             <div class="card-body ">
                                 <h3 class="title">{{$book->price}} &dollar;</h3>
                                 <h4 class=""> {{$book->title}} </h4>
