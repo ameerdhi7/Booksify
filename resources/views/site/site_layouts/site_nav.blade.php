@@ -19,12 +19,21 @@
                 <li><a class="btn btn-round  btn-sm mr-2 mt-2  black "
                        href="http://ameerdhiaa.codelab.camp/dashboard/books/"><i class="material-icons">dashboard</i>Dashboard</a>
                 </li>
+                @auth
                 <li>
                     <a href="/books/carts/" class="btn btn-sm mt-2 mr-2 black btn-round">
                         <i class="material-icons">shopping_basket
                         </i> in cart
                     </a>
                 </li>
+                @else
+                    <li>
+                        <a href="/login" class="btn btn-sm mt-2 mr-2 black btn-round">
+                            <i class="material-icons">shopping_basket
+                            </i> in cart
+                        </a>
+                @endauth
+
                 <li><a class="btn btn-round  btn-sm mr-2 mt-2 black "
                        href="https://github.com/2AMEERDHIAA/Booksify#booksify-rest-api-"><i class="material-icons">rss_feed
                         </i>api</a></li>
