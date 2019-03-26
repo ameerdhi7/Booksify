@@ -166,13 +166,13 @@
     max-width: 15vh;
 }
 a.tip {
-    text-decoration: none
+    text-decoration: none;
 }
 a.tip:hover {
-    position: relative
+    position: relative;
 }
 a.tip span {
-    display: none
+    display: none;
 }
 a.tip:hover span {
     border: #c0c0c0 1px ridge;

@@ -60,7 +60,6 @@
                     </div>
                     <div class="card-footer justify-content-center align-items-center">
 
-                        {{--<form action="/books/carts" method="post">--}}
                         @csrf
                         <input name="books[]" :value=" book.id " type="hidden">
                         @auth
@@ -83,9 +82,6 @@
                                         class="material-icons">shop</i>Buy <span>login or register</span>
                             </a>
                         @endauth
-
-                        {{--</form>--}}
-
                     </div>
                 </div>
 
