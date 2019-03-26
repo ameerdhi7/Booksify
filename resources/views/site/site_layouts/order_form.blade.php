@@ -10,7 +10,8 @@ and there is a optional inputs that enable the user to change and update the ord
                     <h1 class="title text-white">Booksify</h1>
                 </div>
             </div>
-            <div class="row justify-content-center  align-items-center">
+
+            <div class="row justify-content-center ">
 
                 <div class="col-lg-5 col-sm-7">
 
@@ -28,7 +29,7 @@ and there is a optional inputs that enable the user to change and update the ord
                             </h6>
                         </div>
                         <!--Card content-->
-                        <div class="card-body px-lg-5">\
+                        <div class="card-body px-lg-5">
                             <!-- Form -->
                             <form action="/books/orders/create" method="post" class="text-center">
                                 @csrf
@@ -71,27 +72,30 @@ and there is a optional inputs that enable the user to change and update the ord
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-sm-auto">
-                    @foreach($books as $book)
-                        <div class="card card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
-                             data-wow-delay="0.5" style="max-width: 360px">
-                            <div class="card-header card-header-image">
-                                <div class="animate">
-                                    <img class="img  img_height_order " src="/{{$book->poster}}">
+                <div class="col-lg-auto col-sm-auto">
+                    <div class="row justify-content-center align-items-center">
+                        @foreach($books as $book)
+
+                            <div class="col-auto">
+                                <div class="card pt-5 card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
+                                     data-wow-delay="0.5" style="max-width: 360px">
+                                    <div class="card-header card-header-image">
+                                        <div class="animate">
+                                            <img class="img  img_height_order " src="/{{$book->poster}}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body ">
+                                        <h3 class="title">{{$book->price}} &dollar;</h3>
+                                        <h4 class=""> {{$book->title}} </h4>
+
+                                    </div>
+
                                 </div>
-                            </div>
-                            <div class="card-body ">
-                                <h3 class="title">{{$book->price}} &dollar;</h3>
-                                <h4 class=""> {{$book->title}} </h4>
-                                <h4>Edition number:- {{$book->edition_number}}</h4>
-                                <h4>Book isbn:- {{$book->isbn}}</h4>
-                                <h4 class="card-category text-gray"> {{$book->author}}
-                                </h4>
-                            </div>
 
-                        </div>
 
-                    @endforeach
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
             @include("site.site_layouts.site_footer")

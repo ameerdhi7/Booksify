@@ -1,4 +1,4 @@
-<!-- ================ TO SHOW USERS ORDERS  ============ -->
+<!-- ================ TO SHOW item in order=========== -->
 @extends("layouts.master")
 @section("content")
     <div class="row justify-content-center mt-3">
@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header blue-gradient-rgba text-white m-0">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-auto"><h4>{{$user->name}} Orders Table</h4></div>
+                        <div class="col-auto"><h4> ITEMS IN ORDER</h4></div>
                         <div class="col-auto"></div>
                     </div>
                 </div>
@@ -16,24 +16,23 @@
                             <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>user name</th>
-                                <th>book orderd</th>
-                                <th>phone number</th>
-                                <th>Region</th>
-                                <th>city</th>
-                                <th>Order Date</th>
+                                <th>poster</th>
+                                <th>book title</th>
+                                <th>book price</th>
+                                <th>book author</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($orders as $order)
+                            @foreach($books as $book)
                                 <tr>
-                                    <td class="text-center">{{$order->id}}</td>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$order->title}}</td>
-                                    <td>{{$order->phone_number}}</td>
-                                    <td>{{$order->region}}</td>
-                                    <td>{{$order->city}}</td>
-                                    <td>{{$order->created_at}}</td>
+
+                                    <td class="text-center">{{$book->id}}</td>
+                                    <td>
+                                        <img src="/{{$book->poster}}" alt="poster" class="poster_height"></td>
+                                    <td>{{$book->title}}</td>
+                                    <td>{{$book->price}} &dollar;</td>
+                                    <td>{{$book->author}}</td>
+
                                 </tr>
                             @endforeach
                             </tbody>

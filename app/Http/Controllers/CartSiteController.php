@@ -24,24 +24,13 @@ public function addToCart(Book $book){
        $books[] = $book->id;
        \Session::put("books",$books);
 
-       return redirect("/books/carts/");
+
 }
-//    public function getUserCarts(Request $request)
-//    {
-//        $request->userid = intval($request->userid);
-//        $carts = Cart::all()->where("user_id", "equal", "$request->userid")->load("books");
-//        $data = [
-//            "success" => true,
-//
-//            "carts" => $carts
-//        ];
-//        return \Illuminate\Support\Facades\Response::json($data);
-//    }
-//
+
     public function ShowCarts(){
 
-
-        $books=session::get("books");
+        $ids = \Session::get("books",[]);
+        $books=Book::findMany($ids);
         $data=["success"=>"true",
             "books"=>$books];
         return \Illuminate\Support\Facades\Response::json($data);
@@ -49,21 +38,11 @@ public function addToCart(Book $book){
 
     }
 
-//    public function store(Request $request)
-//    {
-//        $request->user_id = intval($request->user_id);
-//        $rules = [
-//            "books" => "required",
-//            "user_id" => "required"
-//        ];
-//        $data = $this->validate($request, $rules);
-//        Cart::create($data)->books()->sync($request->books);
-//        return \Illuminate\Support\Facades\Response::redirectTo("/books/carts/");
-//    }
-
-    public function delete(cart $cart)
+    public function delete(book $book)
     {
-        $cart->delete();
+        $books = \Session::get("books",[]);
+        unset($books[array_search($book->id,$books,true)]);
+        \session::put("books",$books);
         return \Illuminate\Support\Facades\Response::redirectTo("books/carts/");
 
     }

@@ -32,17 +32,14 @@ $ids[]=$id;
         ];
         $data = $this->validate($request, $rules);
         Order::create($data)->books();
+        \Session::forget('books');
         return view("site.site_success");
     }
-    public function orderbyuser(user $user)
+    public function UserOrders(Order $order)
     {
-        $orders = Order::where("user_id", "like", $user->id)->get();
-        $data = [
-            "orders" => $orders,
-            "user" => $user
-        ];
-        return view("dashboard.orders.order_by_user", $data);
-
+         $books=Book::findMany($order->books_id);
+         $data=["books"=>$books];
+       return view("dashboard.orders.items_in_order",$data);
 
     }
 

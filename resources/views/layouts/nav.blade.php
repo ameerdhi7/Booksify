@@ -29,6 +29,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard/users/">Users <i class="material-icons">people</i></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/orders/">orders <i class="material-icons">people</i></a>
+                </li>
                 {{--<li class="nav-item">--}}
                 {{--<h5 class="btn btn-instagram btn-round">{{auth("admin")->admin()->name}} </h5>--}}
                 {{--</li>--}}

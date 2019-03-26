@@ -15,13 +15,19 @@
             <a class="btn btn-round black text-white " href="/"><i class="material-icons">home</i>Home</a>
 
             <ul class="navbar-nav ml-auto">
+
                 <li><a class="btn btn-round  btn-sm mr-2 mt-2  black "
                        href="http://ameerdhiaa.codelab.camp/dashboard/books/"><i class="material-icons">dashboard</i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="/books/carts/" class="btn btn-sm mt-2 mr-2 black btn-round">
+                        <i class="material-icons">shopping_basket
+                        </i> in cart
+                    </a>
                 </li>
                 <li><a class="btn btn-round  btn-sm mr-2 mt-2 black "
                        href="https://github.com/2AMEERDHIAA/Booksify#booksify-rest-api-"><i class="material-icons">rss_feed
                         </i>api</a></li>
-
                 @auth
                     <li class="nav-item active">
                         <form action="{{route('logout')}}" method="post">

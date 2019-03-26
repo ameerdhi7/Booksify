@@ -16,12 +16,9 @@ class OrderController extends Controller
     public function index()
     {
 
-        $orders = Order::with("user:id,name")->get();
-        $data = [
-            "orders" => $orders
-        ];
-        return view("dashboard.orders.orders_index", $data);
-
+       $orders=order::get();
+       $data=["orders"=>$orders];
+       return view("dashboard.orders.orders_index",$data);
     }
 
     /**
@@ -53,7 +50,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+
     }
 
     /**

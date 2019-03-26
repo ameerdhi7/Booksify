@@ -66,16 +66,29 @@
                         @auth
                             <input name="user_id" value="{{auth()->user()->id}}" type="hidden">
                         @endauth
-                        <button @click="addToCart(book.id)" type="submit" class="btn btn-round special"><i
-                                    class="material-icons">add_shopping_cart</i>Cart
-                        </button>
+                        @auth
+                            <button @click="addToCart(book.id)" type="submit" class="btn btn-round special"><i
+                                        class="material-icons">add_shopping_cart</i>Cart
+                            </button>
+                            <a :href="`/books/orders/${book.id}`"
+                               class="btn btn-outline-light special btn-md btn-round"><i
+                                        class="material-icons">shop</i>Buy
+                            </a>
+                        @else
+                            <a class="btn text-white tip btn-round special"><i
+                                        class="material-icons">add_shopping_cart</i>cart<span>login or register</span>
+                            </a>
+                            <a
+                                    class="btn tip text-white btn-outline-light special btn-md btn-round"><i
+                                        class="material-icons">shop</i>Buy <span>login or register</span>
+                            </a>
+                        @endauth
+
                         {{--</form>--}}
-                        <a :href="`/books/orders/${book.id}`"
-                           class="btn btn-outline-light special btn-md btn-round"><i
-                                    class="material-icons">shop</i>Buy
-                        </a>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -92,12 +105,15 @@
             methods: {
                 addToCart(bookId) {
                     axios.post(`/books/carts/add/${bookId}`).then(response => {
-                    });
+                        alert("Book Added To Cart Successfully")
+                    })
                 },
                 getAllBooks: function () {
                     axios.get("/books/").then(response => {
                         this.books = response.data.books.data;
                         this.pagination = response.data.books;
+
+
                     })
                 },
                 search: function () {     // The search work and filter by price and books title on key up the axios gonna send an api request on the char.

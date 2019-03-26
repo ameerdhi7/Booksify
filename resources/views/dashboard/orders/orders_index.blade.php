@@ -13,8 +13,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -22,11 +20,11 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>user name</th>
-                                <th>book orderd</th>
                                 <th>phone number</th>
                                 <th>region</th>
                                 <th>city</th>
                                 <th>Date</th>
+                                <th class="text-center">actions</th>
                             </tr>
                             </thead>
 
@@ -36,12 +34,17 @@
 
                                     <td class="text-center">{{$order->id}}</td>
                                     <td>{{$order->user->name}}</td>
-                                    <td>{{$order->title}}</td>
                                     <td>{{$order->phone_number}}</td>
                                     <td>{{$order->region}}</td>
                                     <td>{{$order->city}}</td>
                                     <td>{{$order->created_at}}</td>
+                                    <td class="text-center">
+                                        <a href="/dashboard/orders/{{$order->id}}" class="btn-sm btn  btn-round btn-info">
+                                            view items <i class="material-icons">
+                                                person </i>
 
+                                        </a>
+                                    </td>
 
                                 </tr>
                             @endforeach

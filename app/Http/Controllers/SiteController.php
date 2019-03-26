@@ -13,7 +13,6 @@ class SiteController extends Controller
     public function home()
     {
 
-
         return view("site.home");
 
     }

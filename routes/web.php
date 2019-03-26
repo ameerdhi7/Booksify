@@ -15,7 +15,7 @@ Route::group(["prefix" => "/dashboard", "middleware" => "auth:admin"], function 
     Route::resource("categories", "CategoryController");
     Route::resource("users", "UsersController");
     Route::resource("orders", "OrderController");
-    Route::get("/user/orders/{user}", "OrderSiteController@orderbyuser");
+    Route::get("/orders/{order}/", "OrderSiteController@UserOrders");
 });
 
 Route::group(["middleware" => ["auth:admin", "admin.super"]], function () {
@@ -30,13 +30,11 @@ Route::get('/booksbysearch/', "SiteController@search");
 Route::group(["middleware" => "auth"], function () {
 
     Route::get('/books/orders/{book}', "OrderSiteController@orderform");
-    Route::post('/books/orders/create/', "OrderSiteController@storeorder");
-//    Route::post('/books/carts/', "CartSiteController@store"); //store to cart
+    Route::post('/books/orders/create/', "OrderSiteController@storeorder"); //store order
     Route::post('/books/carts/add/{book}', "CartSiteController@addToCart"); //add new way to cart
     Route::get('/books/carts/', "CartSiteController@index"); //cart index
     Route::get('/books/carts/cart', "CartSiteController@ShowCarts"); //get user cart via api
-    Route::get('/books/carts/user/', "CartSiteController@getUserCarts"); //get user carts
-    Route::delete('/books/carts/{cart}', "CartSiteController@delete"); //delete cart
+    Route::delete('/books/carts/{book}', "CartSiteController@delete"); //delete cart
 }
 );
 /////////admin auth routes

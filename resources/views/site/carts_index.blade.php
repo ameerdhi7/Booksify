@@ -8,7 +8,9 @@
                 <div class="card">
                     <div class="card-header special blue-gradient-rgba text-white m-0">
                         <div class="row justify-content-between align-items-center">
-                            <div class="col-auto "><h4 class="title">IN CARTS</h4></div>
+                            <div class="col-auto "><h4 class="title">IN CART</h4></div>
+                            <div class="col-auto"><a :href="`/books/orders/${books[0].id}`" class="btn title btn-round btn-info blue-gradient-rgba "> CHECK OUT <i class="material-icons">shopping_basket
+                                    </i> </a></div>
 
                         </div>
                     </div>
@@ -28,21 +30,20 @@
                                 </tr>
                                 </thead>
 
-                                <tbody v-for="cart in carts">
-                                <tr v-for="book in cart.books">
-
-                                    <td class="text-center">@{{cart.id}}</td>
+                                <tbody v-for="book in books">
+                                <tr>
+                                    <td class="text-center">@{{book.id}}</td>
                                     <td><img class="img_cart" :src="`/${book.poster}`" alt=""></td>
                                     <td>@{{ book.title }} &dollar;</td>
                                     <td>@{{ book.price }}</td>
                                     <td> @{{ book.author }}</td>
                                     <td>@{{ book.edition_number }}</td>
                                     <td class="td-actions text-center">
-                                        <form :action="`/books/carts/${cart.id}`" METHOD="post">
+                                        <form :action="`/books/carts/${book.id}`" METHOD="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn-danger btn"><i
-                                                        class="material-icons">close</i>
+                                                        class="material-icons">remove_shopping_cart</i>
                                             </button>
                                         </form>
                                     </td>
@@ -52,12 +53,15 @@
                             </table>
 
                         </div>
+                        <div>
+                        </div>
 
                     </div>
                 </div>
 
             </div>
         </div>
+
     </div>
 @endsection
 
@@ -67,6 +71,7 @@
         let vue = new Vue({
             el: "#carts",
             data: {
+
 
                 books: [],
 

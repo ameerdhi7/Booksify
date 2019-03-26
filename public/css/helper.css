@@ -13,7 +13,6 @@
 }
 
 .vector2 {
-    background-image: url("/images/2.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -87,7 +86,6 @@
 
 .order_vector {
 
-    background-image: url("/images/order.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -167,3 +165,28 @@
     object-fit: cover;
     max-width: 15vh;
 }
+a.tip {
+    text-decoration: none
+}
+a.tip:hover {
+    position: relative
+}
+a.tip span {
+    display: none
+}
+a.tip:hover span {
+    border: #c0c0c0 1px ridge;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background:  #1C2A48 no-repeat 100% 5%;
+    left: 0px;
+    margin: 25px;
+    margin-left: 0%;
+    margin-right: auto;
+    width: 250px;
+    position: absolute;
+    top: 40px;
+    text-decoration: none;
+}
+
