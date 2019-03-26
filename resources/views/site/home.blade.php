@@ -74,12 +74,14 @@
                                         class="material-icons">shop</i>Buy
                             </a>
                         @else
-                            <a class="btn text-white tip btn-round special"><i
-                                        class="material-icons">add_shopping_cart</i>cart<span>login or register</span>
+                            <a class="tip btn text-white  btn-round special"><i
+                                        class="material-icons">add_shopping_cart</i>cart
+                                <span>login or register</span>
                             </a>
                             <a
-                                    class="btn tip text-white btn-outline-light special btn-md btn-round"><i
-                                        class="material-icons">shop</i>Buy <span>login or register</span>
+                                    class="tip btn text-white btn-outline-light special btn-md btn-round"><i
+                                        class="material-icons">shop</i>Buy
+                                <span>login or register</span>
                             </a>
                         @endauth
                     </div>

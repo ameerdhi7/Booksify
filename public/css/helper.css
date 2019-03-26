@@ -172,7 +172,7 @@ a.tip:hover {
     position: relative;
 }
 a.tip span {
-    display: none;
+    display: None;
 }
 a.tip:hover span {
     border: #c0c0c0 1px ridge;
