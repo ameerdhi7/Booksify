@@ -9,7 +9,7 @@
                     <div class="card-header special blue-gradient-rgba text-white m-0">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-auto "><h4 class="title">IN CART</h4></div>
-                            <div class="col-auto"><a :href="`/books/orders/${books[0].id}`" class="btn title btn-round btn-info blue-gradient-rgba "> CHECK OUT <i class="material-icons">shopping_basket
+                            <div class="col-auto"><a v-if="test=false" :href="`/books/orders/${books[0].id}`" class="btn title btn-round btn-info blue-gradient-rgba "> CHECK OUT <i class="material-icons">shopping_basket
                                     </i> </a></div>
 
                         </div>
@@ -22,8 +22,8 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th>Poster</th>
-                                    <th>Title</th>
-                                    <th>Price</th>
+                                    <th>Book Title</th>
+                                    <th>Book Price</th>
                                     <th>Author</th>
                                     <th>Edition Year</th>
                                     <th class="text-center">Remove</th>
@@ -34,8 +34,8 @@
                                 <tr>
                                     <td class="text-center">@{{book.id}}</td>
                                     <td><img class="img_cart" :src="`/${book.poster}`" alt=""></td>
-                                    <td>@{{ book.title }} &dollar;</td>
-                                    <td>@{{ book.price }}</td>
+                                    <td>@{{ book.title }} </td>
+                                    <td>@{{ book.price }} &dollar;</td>
                                     <td> @{{ book.author }}</td>
                                     <td>@{{ book.edition_number }}</td>
                                     <td class="td-actions text-center">
@@ -74,6 +74,7 @@
 
 
                 books: [],
+                test:false
 
             },
             methods: {
@@ -82,6 +83,7 @@
 
                     axios.get("/books/carts/cart").then(response => {
                         this.books = response.data.books;
+
 
                     })
 
