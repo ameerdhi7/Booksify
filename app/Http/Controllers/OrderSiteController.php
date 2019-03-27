@@ -23,7 +23,7 @@ $ids[]=$id;
     public function StoreOrder(Request $request)
     {
         $rules = [
-            "phone_number" => "required",
+            "phone_number" => ["required","regex:/^((((00)|(\+))964|0)?)7[0-9]{9}$/"],
             "city" => "required",
             "region" => "required",
             "books_id" => ["array", "required"],
