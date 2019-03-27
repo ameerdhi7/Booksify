@@ -28,8 +28,6 @@
     <script src="/js/moment.min.js"></script>
     <script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="/js/nouislider.min.js" type="text/javascript"></script>
-    <script src="/js/bootstrap-tagsinput.js"></script>
-    <script src="/js/bootstrap-selectpicker.js" type="text/javascript"></script>
     <script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
