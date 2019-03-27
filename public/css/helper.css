@@ -34,8 +34,9 @@
 
 .img_height {
     max-height: 40vh;;
-    object-fit: cover;
+    object-fit: contain;
     transition: all 1s;
+
 
 
 }

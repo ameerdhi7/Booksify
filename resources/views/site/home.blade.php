@@ -31,9 +31,9 @@
                 <div class="card card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
                      data-wow-delay="0.5">
                     <div class="card-header card-header-image">
-                        <div class="animate">
-                            <img class="img  img_height " :src="`/${book.poster}`">
-                        </div>
+                               <div class="animate">
+                                   <img class="img  img_height " :src="`/${book.poster}`">
+                               </div>
                     </div>
                     <div class="card-body ">
                         <div class="row justify-content-center">
@@ -59,7 +59,6 @@
                         </div>
                     </div>
                     <div class="card-footer justify-content-center align-items-center">
-
                         @csrf
                         <input name="books[]" :value=" book.id " type="hidden">
                         @auth
@@ -96,7 +95,6 @@
             data: {
                 term: "",
                 books: [],
-                pagination: [],
             },
             methods: {
                 addToCart(bookId) {
@@ -107,9 +105,6 @@
                 getAllBooks: function () {
                     axios.get("/books/").then(response => {
                         this.books = response.data.books.data;
-                        this.pagination = response.data.books;
-
-
                     })
                 },
                 search: function () {     // The search work and filter by price and books title on key up the axios gonna send an api request on the char.
@@ -122,13 +117,6 @@
                         this.books = response.data.books;
                     })
                 },
-                order: function () {
-                    axios.get("/books/orders/", {
-                        params: {
-                            term: "",
-                        }
-                    })
-                }
             },
 
             mounted() {

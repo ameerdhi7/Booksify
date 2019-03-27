@@ -2,7 +2,6 @@
     <div class="container-fluid  mt-auto">
         <div class="row  mt-0 mb-0 justify-content-center">
             <div class="col-lg-3 col-sm-auto">
-
                 <h6 class="text-white">&copy; actioned by ameer dhiaa
                     <a href="https://github.com/2AMEERDHIAA"
                        class="btn btn-social btn-just-icon btn-sm btn-round btn-github">
@@ -16,7 +15,6 @@
                     </button>
                 </h6>
             </div>
-
         </div>
     </div>
 </footer>
