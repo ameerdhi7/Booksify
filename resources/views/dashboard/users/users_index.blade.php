@@ -54,10 +54,6 @@
                                                 <button type="submit" class="btn-danger btn"><i class="material-icons">close</i>
                                                 </button>
                                             </form>
-                                            <a href="/dashboard/user/orders/{{$user->id}}" class="btn btn-info">
-                                                user orders
-                                                <i class="material-icons">person</i>
-                                            </a>
                                         </div>
                                     </td>
                                 </tr>

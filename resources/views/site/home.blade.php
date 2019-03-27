@@ -78,7 +78,7 @@
                                         class="material-icons">add_shopping_cart</i>cart
                             </a>
                             <a href="/login"
-                                    class="tip btn text-white btn-outline-light special btn-md btn-round"><i
+                               class="tip btn text-white btn-outline-light special btn-md btn-round"><i
                                         class="material-icons">shop</i>Buy
                             </a>
                         @endauth
@@ -101,7 +101,7 @@
             methods: {
                 addToCart(bookId) {
                     axios.post(`/books/carts/add/${bookId}`).then(response => {
-                        alert("Book Added To Cart Successfully")
+                        alert("Book Added To Cart Successfully , Check The Your Cart To see The Items")
                     })
                 },
                 getAllBooks: function () {

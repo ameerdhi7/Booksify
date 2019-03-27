@@ -2,9 +2,13 @@
 @extends("site.site_layouts.site_master")
 @section("content")
     <div class="container" id="carts">
-
-
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-between  mt-5">
+            <div class="col-lg-5 col-sm-auto">
+                <a href="http://ameerdhiaa.codelab.camp"><h1 class="title text-white">
+                        Booksify</h1></a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header special blue-gradient-rgba text-white m-0">
@@ -13,7 +17,7 @@
                             <div class="col-auto">
                                 <a :href="`/books/orders/${books[0].id}`"
                                    class="btn title btn-round  btn-info blue-gradient-rgba ">
-                                    CHECK OUT  <i
+                                    CHECK OUT <i
                                             class="material-icons">shopping_basket
                                     </i> </a>
                             </div>
@@ -32,7 +36,7 @@
                                     <th>Book Price</th>
                                     <th>Author</th>
                                     <th>Edition Year</th>
-                                    <th class="text-center">Remove </th>
+                                    <th class="text-center">Remove</th>
 
                                 </tr>
                                 </thead>

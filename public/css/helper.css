@@ -5,7 +5,7 @@
 }
 
 .vector {
-    background-image: url("/images/s.jpg");
+    background-image: url("/images/optimized.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -148,7 +148,7 @@
     margin-top: 200px;
 }
 .img_height_order {
-    max-height: 50vh;;
+    max-height: 30vh;;
     object-fit: cover;
     transition: all 1s;
 }
