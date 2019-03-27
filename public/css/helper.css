@@ -33,12 +33,9 @@
 }
 
 .img_height {
-    max-height: 40vh;;
+    max-height: 40vh;
     object-fit: contain;
     transition: all 1s;
-
-
-
 }
 
 .img_height:hover {

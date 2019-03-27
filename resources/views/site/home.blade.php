@@ -32,7 +32,7 @@
                      data-wow-delay="0.5">
                     <div class="card-header card-header-image">
                                <div class="animate">
-                                   <img class="img  img_height " :src="`/${book.poster}`">
+                                   <img class="img_height" :src="`/${book.poster}`">
                                </div>
                     </div>
                     <div class="card-body ">
