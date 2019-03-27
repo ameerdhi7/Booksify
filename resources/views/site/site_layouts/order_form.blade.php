@@ -76,7 +76,7 @@ and there is a optional inputs that enable the user to change and update the ord
                     <div class="row justify-content-center align-items-center">
                         @foreach($books as $book)
 
-                            <div class="col-lg-3">
+                            <div class="col-auto">
                                 <div class="card  card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
                                      data-wow-delay="0.5" style="max-width: 360px">
                                     <div class="card-header card-header-image">

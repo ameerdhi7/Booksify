@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Booksify</title>
     <link rel="stylesheet" href="/css/material-kit.min.css">
-
     <!-- helper.css is a additional css classes such as colors -->
     <link rel="stylesheet" href="/css/helper.css">
     <!--     Fonts and icons     -->
@@ -16,12 +15,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- icon for title bar-->
     <link rel="shortcut icon" href="/images/1.png"/>
-
-
 </head>
-@auth("admin")
-
-    @include("layouts.nav")
+@auth("admin")@include("layouts.nav")
 @endauth
 <body class="bg-light vector">
 <div class="container">
