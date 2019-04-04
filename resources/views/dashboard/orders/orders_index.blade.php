@@ -8,9 +8,6 @@
                 <div class="card-header blue-gradient-rgba text-white m-0">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto"><h4>Orders Table</h4></div>
-                        <div class="col-auto"><a class="btn btn-success btn-round btn-sm blue-gradient-rgba"
-                                                 href="/dashboard/books/create"><i class="material-icons">add</i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -39,7 +36,8 @@
                                     <td>{{$order->city}}</td>
                                     <td>{{$order->created_at}}</td>
                                     <td class="text-center">
-                                        <a href="/dashboard/orders/{{$order->id}}" class="btn-sm btn  btn-round btn-info">
+                                        <a href="/dashboard/orders/{{$order->id}}"
+                                           class="btn-sm btn  btn-round btn-info">
                                             view items <i class="material-icons">
                                                 person </i>
 

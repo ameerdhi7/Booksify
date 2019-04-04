@@ -16,9 +16,9 @@ class OrderController extends Controller
     public function index()
     {
 
-       $orders=order::get();
-       $data=["orders"=>$orders];
-       return view("dashboard.orders.orders_index",$data);
+        $orders = Order::get();
+        $data = ["orders" => $orders];
+        return view("dashboard.orders.orders_index", $data);
     }
 
     /**
