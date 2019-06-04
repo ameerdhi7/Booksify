@@ -2,8 +2,6 @@
 Booksify is an E-commercial crud web app Demo Made With Laravel 5.7 & vue.js In Garage of Codelab Camp included the features
 below:-
 <br/>
-<br/>
-<br/>
 -crud operations for the models book & user
 <br/>
 -admin panal to manage and view the orders , users , admins
