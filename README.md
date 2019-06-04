@@ -4,10 +4,14 @@ _crud operations for the models book & user
 -users authentication 
 -ability to add the items to cart
 -Restful get api to fetch the all books 
--admin authentication & super admin authorization to the dashboard
+*admin authentication & super admin authorization to the dashboard
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 <br/>
 
-# preview
+# Preview
 check it here:- http://ameerdhiaa.codelab.camp/ <br/>
 
  # Booksify Rest Api:-
