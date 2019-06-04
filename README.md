@@ -4,7 +4,7 @@ Booksify is an E-commercial crud web app Demo Made With Laravel 5.7 & vue.js In 
 -users authentication 
 -ability to add the items to cart
 -Restful get api to fetch the all books 
-- admin authentication & super admin authorization to the dashboard
+-admin authentication & super admin authorization to the dashboard
 <br/>
 
 #preview
