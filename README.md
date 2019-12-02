@@ -8,11 +8,11 @@ below:-
 <br/>
 -Users authentication
 <br/>
--Ability to add the items to cart
+-Ability to add items to the cart
 <br/>
--Restful get api to fetch the all books 
+-Restful get api to fetch all the books. 
 <br/>
--Admin authentication & super admin authorization to the dashboard
+-Admin authentication & super admin authorization
 # Preview
 check it here:- http://ameerdhiaa.codelab.camp/ <br/>
 
