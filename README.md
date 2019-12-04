@@ -13,13 +13,8 @@ below:-
 -Restful get api to fetch all the books. 
 <br/>
 -Admin authentication & super admin authorization
-# Preview
-check it here:- http://ameerdhiaa.codelab.camp/ <br/>
 
- # Booksify Restful Api
- Method :- Get <br/> 
- URL :- http://ameerdhiaa.codelab.camp/books/ <br />
- The Data Paginated on 12 books per request. <br/>
+
  
  
 
