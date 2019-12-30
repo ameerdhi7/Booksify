@@ -14,6 +14,8 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- icon for title bar-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+
     <link rel="shortcut icon" href="/images/1.png"/>
 </head>
 @auth("admin")@include("layouts.nav")
@@ -29,9 +31,10 @@
     <script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="/js/nouislider.min.js" type="text/javascript"></script>
     <script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
-    <script src="/js/app.js"></script>
+{{--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.4/dist/sweetalert2.all.min.js"></script>
+    @yield("scripts")
 </div>
 </body>
 </html>

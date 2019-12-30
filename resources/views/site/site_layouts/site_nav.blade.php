@@ -17,7 +17,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li><a class="btn btn-round  btn-sm mr-2 mt-2  black "
-                       href="http://ameerdhiaa.codelab.camp/dashboard/books/"><i class="material-icons">dashboard</i>Dashboard</a>
+                       href="/dashboard/books/"><i class="material-icons">dashboard</i>Dashboard</a>
                 </li>
                 @auth
                 <li>

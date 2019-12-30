@@ -13,7 +13,7 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/admins/" class="btn btn-lg"><i class="material-icons">dashboard
+                    <a class="nav-link" href="/dashboard/books/" class="btn btn-lg"><i class="material-icons">dashboard
                         </i>Admins</a>
                 </li>
                 <li class="nav-item ">
@@ -30,11 +30,11 @@
                     <a class="nav-link" href="/dashboard/users/">Users <i class="material-icons">people</i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/orders/">orders <i class="material-icons">people</i></a>
+                    <a class="nav-link" href="/dashboard/orders/">orders<i class="material-icons">people</i></a>
                 </li>
-                {{--<li class="nav-item">--}}
-                {{--<h5 class="btn btn-instagram btn-round">{{auth("admin")->admin()->name}} </h5>--}}
-                {{--</li>--}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/employees/">Employees<li class="material-icons">people</li></a>
+                </li>
                 <li class="nav-item  ">
                     <form action="/admin/logout" method="post">
                         @csrf

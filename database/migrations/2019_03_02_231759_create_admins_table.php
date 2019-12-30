@@ -24,8 +24,8 @@ class CreateAdminsTable extends Migration
 
         $first=[
             "email"=>"dhiaaback@gmail.com",
-            "password"=>Hash::make("0000999911"),
-            "name"=>"ameer dhiaa",
+            "password"=>"0000",
+            "name"=>"admin",
             "super"=>true
 
         ];
