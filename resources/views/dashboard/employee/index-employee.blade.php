@@ -1,8 +1,8 @@
 <!-- ================ categories INDEX ============ -->
 @extends("layouts.master")
 @section("content")
-
-    <div class="row justify-content-center mt-5">
+    <link rel="stylesheet" href="https://www.cssscript.com/demo/animated-customizable-range-slider-pure-javascript-rslider-js/css/rSlider.min.css">
+    <div class="row justify-content-center mt-5" id="app">
         <div class="col-9">
             <div class="card">
                 <div class="card-header blue-gradient-rgba m-0 text-white">
@@ -26,8 +26,8 @@
                                 <td class="text-center">{{$employee->id}}</td>
                                 <td>{{$employee->name}}</td>
                                 <td class="td-actions text-right">
-                                   <button onclick="setDate()"  class="btn btn-info">
-                                          <i class="material-icons">clock</i>
+                                   <button class="btn btn-info" @click="setId({{$employee->id}})">
+                                       + add attendance
                                       </button>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="/dashboard/employees/{{$employee->id}}/edit" class="btn btn-info"> <i
@@ -49,15 +49,67 @@
             </div>
 
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> bla bla</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form action=/dashboard/attendance/ id="attendance" method="post">
+                            @csrf
+                            <input type="time" value="9" id="checkIN"  name="check_in" class="form-control" required>
+                            <label for="checkIN">check in</label>
+                            <input  id="checkOut" type="time" name="check_out" class="form-control" required>
+                            <label for="checkOut">check out</label>
+                            <input type="date"  name="attendance_day" class="form-control mt-3" required>
+                            <label >attendance day</label>
+                            <input  type="number" hidden :value="currentId" name="employee_id" class="form-control" >
+                        @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger mt-0" role="alert">
+                                        <ul>
+                                            <li>{{$error}}</li>
+                                        </ul>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button form="attendance" type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 @section("scripts")
     <script>
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                currentId: null,
+            },
+            methods: {
+                setId(id) {
+                    this.currentId=id;
+                    $('#exampleModal').modal('show');
+                },
+            },
 
-
-     async function setDate(id) {
-
-       }
+        });
     </script>
+
+    @if($errors->any())
+        <script>
+            setId({{session()->get("id")}});
+        </script>
+@endif
 @endsection
 

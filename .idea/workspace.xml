@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3985eb08-676b-4659-b789-4d567e30aa1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/swalform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employee/create-employee.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employee/edit-employee.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employee/index-employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/books.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/books.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_02_231759_create_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_02_231759_create_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/helper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/helper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employee/create-employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/employee/create-employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employee/index-employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/employee/index-employee.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/site_layouts/site_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/site_layouts/site_nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -244,7 +236,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

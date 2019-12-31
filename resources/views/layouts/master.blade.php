@@ -14,7 +14,6 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- icon for title bar-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 
     <link rel="shortcut icon" href="/images/1.png"/>
 </head>
@@ -23,18 +22,17 @@
 <body class="bg-light vector">
 <div class="container">
 @yield("content")
+</div>
+
 <!-- =======   JS Files for material kit============  -->
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/popper.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap-material-design.js" type="text/javascript"></script>
     <script src="/js/moment.min.js"></script>
     <script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="/js/nouislider.min.js" type="text/javascript"></script>
     <script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
     <script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
-{{--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.4/dist/sweetalert2.all.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     @yield("scripts")
-</div>
 </body>
 </html>

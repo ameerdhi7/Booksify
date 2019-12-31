@@ -18,8 +18,10 @@
                         @csrf
                         <div class="row align-items-center justify-content-between mt-4">
                             <div class="col">
+
                                 <input type="text" name="name" type="text" id="type" class="form-control"  required>
                                 <label for="type" class="mt-3">Employee name</label>
+
                             </div>
 
                         </div>
