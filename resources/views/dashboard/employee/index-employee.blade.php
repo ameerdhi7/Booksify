@@ -39,8 +39,8 @@
                                             <button type="submit" class="btn-danger btn"><i
                                                     class="material-icons">close</i></button>
                                         </form>
-                                        <a href="/dashboard/employees/{{$employee->id}}/" class="btn ml-1 btn-success"> attendance showcase
-                                        </a>
+                                        <button @click="setId({{$employee->id}},'triggerGetAttendanceModal')" class="btn ml-1 btn-success"> attendance showcase
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -50,6 +50,42 @@
                 </div>
             </div>
 
+        </div>
+
+
+        <div class="modal fade" id="getEmployeeAttendanceReport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">get The attendance Report</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form :action="`/dashboard/reports/${currentId}`" id="report" method="get">
+                            <input  type="date" id="from"  name="from" class="form-control " required>
+                            <label for="from">from</label>
+                            <input  id="to" type="date"  name="to" class="form-control " required>
+                            <label for="to">To</label>
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger mt-0" role="alert">
+                                        <ul>
+                                            <li>{{$error}}</li>
+                                        </ul>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button form="report" type="submit" class="btn btn-primary">search</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -62,7 +98,7 @@
 
                     </div>
                     <div class="modal-body">
-                        <form action=/dashboard/attendance/ id="attendance" method="post">
+                        <form action="/dashboard/attendance/" id="attendance" method="post">
                             @csrf
                             <input value="09:00"    type="time" id="checkIN"  name="check_in" class="form-control " >
                             <label for="checkIN">check in</label>
@@ -70,7 +106,7 @@
                             <label for="checkOut">check out</label>
                             <input type="date"  name="attendance_day" class="form-control mt-3" required>
                             <label >attendance day</label>
-                            <input  value="2020:12:12" type="number" hidden :value="currentId" name="employee_id" class="form-control" >
+                            <input   type="number" hidden :value="currentId" name="employee_id" class="form-control" >
                             <input type="number" value="0"  name="late" class="form-control mt-3" hidden>
                         @if($errors->any())
                                 @foreach($errors->all() as $error)
@@ -100,15 +136,15 @@
                 currentId: null,
             },
             methods: {
-                setId(id) {
+                setId(id,modal="addAttendance") {
                     this.currentId=id;
-                    $('#exampleModal').modal('show');
+                    modal=="addAttendance"?$('#exampleModal').modal('show'):$('#getEmployeeAttendanceReport').modal('show');
                 },
             },
             mounted:function () {
                 @if($errors->any())
-                this.setId({{session()->get("id")}});
-                 @endif
+                this.setId({{session()->get("id")}},{{session()->get("modalType")}});
+                @endif
             }
 
         });

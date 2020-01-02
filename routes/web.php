@@ -17,6 +17,7 @@ Route::group(["prefix" => "/dashboard", "middleware" => "auth:admin"], function 
     Route::resource("employees", "EmployeeController");
     Route::resource("attendance", "AttendanceController");
     Route::resource("orders", "OrderController");
+    Route::get("/reports/{employee}","AttendanceController@getEmployeeCalender");
     Route::get("/orders/{order}/", "OrderSiteController@UserOrders");
 });
 

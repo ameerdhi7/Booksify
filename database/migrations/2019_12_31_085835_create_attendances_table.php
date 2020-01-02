@@ -22,6 +22,8 @@ class CreateAttendancesTable extends Migration
             $table->bigInteger('employee_id');
             $table->timestamps();
         });
+
+
     }
 
     /**

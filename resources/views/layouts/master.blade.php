@@ -21,18 +21,18 @@
 @endauth
 <body class="bg-light vector">
 <div class="container">
-@yield("content")
+    @yield("content")
 </div>
 
 <!-- =======   JS Files for material kit============  -->
-    <script src="/js/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/popper.min.js" type="text/javascript"></script>
-    <script src="/js/bootstrap-material-design.js" type="text/javascript"></script>
-    <script src="/js/moment.min.js"></script>
-    <script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
-    <script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    @yield("scripts")
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script src="/js/popper.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap-material-design.js" type="text/javascript"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="/js/jasny-bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/material-kit.js?v=2.1.1" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+@yield("scripts")
 </body>
 </html>

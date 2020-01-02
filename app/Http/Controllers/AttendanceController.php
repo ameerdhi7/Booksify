@@ -3,17 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Attendance;
+use App\Employee;
 use Validator;
+use  MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-
 class AttendanceController extends Controller
 {
+    protected $range=[];
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getEmployeeCalender(Employee $employee,Request $request){
+        session()->put("id",$request->employee_id);
+        session()->put("modalType","getEmployeeAttendanceReport");
+        $rules=["from"=>"required",
+        "to"=>"required"
+        ];
+        $data=$this->validate($request,$rules);
+        array_push($this->range,$data["from"]);
+        array_push($this->range,$data["to"]);
+        $attendances=$employee->attendances;
+        $events=$this->filterFromTo($attendances);
+        $event = [];
+        foreach ($events as $row){
+            $event[] = Calendar::event(
+                $employee->name,
+                false,
+                new \DateTime($row->attendance_day),
+                new \DateTime($row->attendance_day),
+                $row->id,
+                [
+                    'color'=>"green",
+                ]
+            );
+        }
+        $calendar =  Calendar::addEvents($event);
+        return view('dashboard.employee.calender',compact('events','calendar'));
+    }
+
+    public function filterFromTo($attendances){
+      return  $attendances->whereBetween("attendance_day",$this->range);
+    }
+
+
+
+
+
+
     public function index()
     {
         //
@@ -38,6 +78,7 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         session()->put("id",$request->employee_id);
+        session()->put("modalType","addAttendance");
         $rules=["attendance_day"=>"required",
             "check_in"=>["required"]
             ,"check_out"=>["required"]
@@ -59,10 +100,6 @@ class AttendanceController extends Controller
     public function show(Attendance $attendance)
     {
 
-
-
-    }
-    public function getEmployeeCalender(\Illuminate\Http\Response){
 
 
     }
