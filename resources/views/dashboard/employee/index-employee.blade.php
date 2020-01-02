@@ -53,7 +53,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> bla bla</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">add a attendance</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -62,13 +62,14 @@
                     <div class="modal-body">
                         <form action=/dashboard/attendance/ id="attendance" method="post">
                             @csrf
-                            <input type="time" value="9" id="checkIN"  name="check_in" class="form-control" required>
+                            <input value="09:00"    type="time" id="checkIN"  name="check_in" class="form-control " >
                             <label for="checkIN">check in</label>
-                            <input  id="checkOut" type="time" name="check_out" class="form-control" required>
+                            <input value="04:00"   id="checkOut" type="time" valu name="check_out" class="form-control " >
                             <label for="checkOut">check out</label>
                             <input type="date"  name="attendance_day" class="form-control mt-3" required>
                             <label >attendance day</label>
-                            <input  type="number" hidden :value="currentId" name="employee_id" class="form-control" >
+                            <input  value="2020:12:12" type="number" hidden :value="currentId" name="employee_id" class="form-control" >
+                            <input type="number" value="0"  name="late" class="form-control mt-3" hidden>
                         @if($errors->any())
                                 @foreach($errors->all() as $error)
                                     <div class="alert alert-danger mt-0" role="alert">
@@ -102,14 +103,15 @@
                     $('#exampleModal').modal('show');
                 },
             },
+            mounted:function () {
+                @if($errors->any())
+                this.setId({{session()->get("id")}});
+                 @endif
+            }
 
         });
     </script>
 
-    @if($errors->any())
-        <script>
-            setId({{session()->get("id")}});
-        </script>
-@endif
+
 @endsection
 

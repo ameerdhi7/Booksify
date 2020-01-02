@@ -40,8 +40,11 @@ class AttendanceController extends Controller
         session()->put("id",$request->employee_id);
         $rules=["attendance_day"=>"required",
             "check_in"=>["required"]
-            ,"check_out"=>["required","after:check_in"]
-            ,"employee_id"=>"required"];
+            ,"check_out"=>["required"]
+            ,"employee_id"=>"required",
+          "late"=>"required"
+
+        ];
         $data=$this->validate($request,$rules);
         Attendance::create($data);
         return Response::redirectTo("/dashboard/employees/");

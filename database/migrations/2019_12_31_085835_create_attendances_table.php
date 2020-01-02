@@ -18,7 +18,7 @@ class CreateAttendancesTable extends Migration
             $table->date('attendance_day');
             $table->time('check_in');
             $table->time('check_out');
-            $table->time('late_hours')->default(0);
+            $table->time('late');
             $table->bigInteger('employee_id');
             $table->timestamps();
         });
