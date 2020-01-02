@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use PhpParser\Node\Stmt\DeclareDeclare;
+
 class Attendance extends Model
 {
   public $totalAttendanceHours=7;

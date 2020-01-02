@@ -27,22 +27,9 @@ class AttendanceController extends Controller
         array_push($this->range,$data["from"]);
         array_push($this->range,$data["to"]);
         $attendances=$employee->attendances;
-        $events=$this->filterFromTo($attendances);
-        $event = [];
-        foreach ($events as $row){
-            $event[] = Calendar::event(
-                $employee->name,
-                false,
-                new \DateTime($row->attendance_day),
-                new \DateTime($row->attendance_day),
-                $row->id,
-                [
-                    'color'=>"green",
-                ]
-            );
-        }
-        $calendar =  Calendar::addEvents($event);
-        return view('dashboard.employee.calender',compact('events','calendar'));
+        $attendances=$this->filterFromTo($attendances);
+        $data=["attendances"=>$attendances,"employee"=>$employee];
+        return view('dashboard.employee.calender',$data);
     }
 
     public function filterFromTo($attendances){
