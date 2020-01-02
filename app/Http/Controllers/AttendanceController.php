@@ -58,7 +58,13 @@ class AttendanceController extends Controller
      */
     public function show(Attendance $attendance)
     {
-        //
+
+
+
+    }
+    public function getEmployeeCalender(\Illuminate\Http\Response){
+
+
     }
 
     /**

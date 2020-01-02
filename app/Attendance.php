@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Doctrine\DBAL\Schema\AbstractAsset;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 class Attendance extends Model

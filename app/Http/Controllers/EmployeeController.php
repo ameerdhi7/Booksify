@@ -42,10 +42,8 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $rules = [
-
             "name" => "required",
         ];
-
         $data = $this->validate($request, $rules);
         Employee::create($data);
         return Response::redirectTo("/dashboard/employees/");
@@ -59,7 +57,8 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        $attendances=$employee->attendances;
+
     }
 
     /**

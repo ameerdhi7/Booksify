@@ -17,7 +17,7 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th>Name</th>
-                            <th class="text-right">Actions</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,12 +33,14 @@
                                         <a href="/dashboard/employees/{{$employee->id}}/edit" class="btn btn-info"> <i
                                                 class="material-icons">edit</i>
                                         </a>
-                                        <form action="/dashboard/employees/{{$employee->id}}" METHOD="post">
+                                        <form action="/dashboard/employees/" METHOD="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn-danger btn"><i
                                                     class="material-icons">close</i></button>
                                         </form>
+                                        <a href="/dashboard/employees/{{$employee->id}}/" class="btn ml-1 btn-success"> attendance showcase
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
