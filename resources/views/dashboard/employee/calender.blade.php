@@ -14,16 +14,28 @@
 </head>
 <body class="bg-light vector">
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-auto">
+    <div class="row justify-content-center mt-3">
+        <div class="col-8">
             <div class="card">
                 <div class="card-header text-center blue-gradient-rgba">
 
-<h3 class="text-white"><span>{{$employee->name}}</span> <span>تقرير حضور الموظف</span></h3>
+<h3 class="text-white"><span>{{$employee->name}}</span> <span>Attendance Report</span></h3>
                 </div>
                 <div class="card-body">
                     <div class="" id='calendar'></div>
-
+                  <div class="row justify-content-center">
+                      <div class="col-12">
+                          <div class="card">
+                              <div class="card-header text-white text-center blue-gradient-rgba">
+                                  Total late in hours and min
+                              </div>
+                              <div class="card-body text-center">
+<h3>                                  {{$totalLate}}
+</h3>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

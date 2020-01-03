@@ -1,14 +1,17 @@
 <!-- ================ categories INDEX ============ -->
 @extends("layouts.master")
 @section("content")
-    <link rel="stylesheet" href="https://www.cssscript.com/demo/animated-customizable-range-slider-pure-javascript-rslider-js/css/rSlider.min.css">
+    <link rel="stylesheet"
+          href="https://www.cssscript.com/demo/animated-customizable-range-slider-pure-javascript-rslider-js/css/rSlider.min.css">
     <div class="row justify-content-center mt-5" id="app">
         <div class="col-9">
             <div class="card">
                 <div class="card-header blue-gradient-rgba m-0 text-white">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto"><h4>Employees Table</h4></div>
-                        <div class="col-auto"><a href="/dashboard/employees/create" class="btn btn-info blue-gradient-rgba btn-sm btn-round blue-gradient"><i class="material-icons"> add</i></a></div>
+                        <div class="col-auto"><a href="/dashboard/employees/create"
+                                                 class="btn btn-info blue-gradient-rgba btn-sm btn-round blue-gradient"><i
+                                        class="material-icons"> add</i></a></div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -26,20 +29,21 @@
                                 <td class="text-center">{{$employee->id}}</td>
                                 <td>{{$employee->name}}</td>
                                 <td class="td-actions text-right">
-                                   <button class="btn btn-info" @click="setId({{$employee->id}})">
-                                       + add attendance
-                                      </button>
+                                    <button class="btn btn-info" @click="setId({{$employee->id}})">
+                                        + add attendance
+                                    </button>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="/dashboard/employees/{{$employee->id}}/edit" class="btn btn-info"> <i
-                                                class="material-icons">edit</i>
+                                                    class="material-icons">edit</i>
                                         </a>
                                         <form action="/dashboard/employees/" METHOD="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn-danger btn"><i
-                                                    class="material-icons">close</i></button>
+                                                        class="material-icons">close</i></button>
                                         </form>
-                                        <button @click="setId({{$employee->id}},'triggerGetAttendanceModal')" class="btn ml-1 btn-success"> attendance showcase
+                                        <button @click="setId({{$employee->id}},'triggerGetAttendanceModal')"
+                                                class="btn ml-1 btn-success"> attendance showcase
                                         </button>
                                     </div>
                                 </td>
@@ -53,7 +57,8 @@
         </div>
 
 
-        <div class="modal fade" id="getEmployeeAttendanceReport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="getEmployeeAttendanceReport" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -61,13 +66,12 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-
                     </div>
                     <div class="modal-body">
                         <form :action="`/dashboard/reports/${currentId}`" id="report" method="get">
-                            <input  type="date" id="from"  name="from" class="form-control " required>
+                            <input type="date" id="from" name="from" class="form-control " required>
                             <label for="from">from</label>
-                            <input  id="to" type="date"  name="to" class="form-control " required>
+                            <input id="to" type="date" name="to" class="form-control " required>
                             <label for="to">To</label>
                             @if($errors->any())
                                 @foreach($errors->all() as $error)
@@ -87,7 +91,8 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -95,20 +100,19 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-
                     </div>
                     <div class="modal-body">
                         <form action="/dashboard/attendance/" id="attendance" method="post">
                             @csrf
-                            <input value="09:00"    type="time" id="checkIN"  name="check_in" class="form-control " >
+                            <input value="09:00" type="time" id="checkIN" name="check_in" class="form-control" required>
                             <label for="checkIN">check in</label>
-                            <input value="04:00"   id="checkOut" type="time" valu name="check_out" class="form-control " >
+                            <input value="04:00" id="checkOut" type="time"  name="check_out" class="form-control" required>
                             <label for="checkOut">check out</label>
-                            <input type="date"  name="attendance_day" class="form-control mt-3" required>
-                            <label >attendance day</label>
-                            <input   type="number" hidden :value="currentId" name="employee_id" class="form-control" >
-                            <input type="number" value="0"  name="late" class="form-control mt-3" hidden>
-                        @if($errors->any())
+                            <input type="date" name="attendance_day" class="form-control mt-3" required>
+                            <label>attendance day</label>
+                            <input type="number" hidden :value="currentId" name="employee_id" class="form-control">
+                            <input type="number" value="0" name="late" class="form-control mt-3" hidden>
+                            @if($errors->any())
                                 @foreach($errors->all() as $error)
                                     <div class="alert alert-danger mt-0" role="alert">
                                         <ul>
@@ -136,14 +140,14 @@
                 currentId: null,
             },
             methods: {
-                setId(id,modal="addAttendance") {
-                    this.currentId=id;
-                    modal=="addAttendance"?$('#exampleModal').modal('show'):$('#getEmployeeAttendanceReport').modal('show');
+                setId(id, modal = "addAttendance") {
+                    this.currentId = id;
+                    modal == "addAttendance" ? $('#exampleModal').modal('show') : $('#getEmployeeAttendanceReport').modal('show');
                 },
             },
-            mounted:function () {
+            mounted: function () {
                 @if($errors->any())
-                this.setId({{session()->get("id")}},{{session()->get("modalType")}});
+                    this.setId({{session()->get("id")}},{{session()->get("modalType")}});
                 @endif
             }
 
