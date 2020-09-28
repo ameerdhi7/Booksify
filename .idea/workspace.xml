@@ -250,10 +250,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="566" height="451" key="SwitcherDM" timestamp="1601284729905">
+    <state x="402" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601287395366">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="566" height="451" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1601284729905" />
+    <state x="402" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1601287395366" />
+    <state width="566" height="451" key="SwitcherDM" timestamp="1601287452373">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="566" height="451" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1601287452373" />
     <state x="384" y="111" width="672" height="676" key="search.everywhere.popup" timestamp="1601286818751">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
