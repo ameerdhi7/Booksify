@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3985eb08-676b-4659-b789-4d567e30aa1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,10 +256,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="566" height="451" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1601284729905" />
-    <state x="384" y="111" width="672" height="676" key="search.everywhere.popup" timestamp="1601284966840">
+    <state x="384" y="111" width="672" height="676" key="search.everywhere.popup" timestamp="1601286818751">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="384" y="111" width="672" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1601284966840" />
+    <state x="384" y="111" width="672" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1601286818751" />
   </component>
   <component name="masterDetails">
     <states>
