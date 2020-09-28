@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
-
 
 
 /**
@@ -31,12 +31,14 @@ use Illuminate\Support\Facades\Hash;
 class Admin extends authenticatable
 {
 
-    protected $fillable=["name","email","password","super"];
+    protected $fillable = ["name", "email", "password", "super"];
 
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function setPasswordAttribute($newPassword){
+
+    public function setPasswordAttribute($newPassword)
+    {
         $this->attributes["password"] = Hash::make($newPassword);
 
     }

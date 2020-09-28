@@ -31,9 +31,9 @@
                 <div class="card card-profile wow slideInDown ml-auto mr-auto" data-wow-duration="1.5s"
                      data-wow-delay="0.5">
                     <div class="card-header card-header-image">
-                               <div class="animate">
-                                   <img class="img_height" :src="`/${book.poster}`">
-                               </div>
+                        <div class="animate">
+                            <img class="img_height" :src="`/${book.poster}`">
+                        </div>
                     </div>
                     <div class="card-body ">
                         <div class="row justify-content-center">
